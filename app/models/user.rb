@@ -14,6 +14,12 @@ class User < ApplicationRecord
         user
     end 
 
+    def self.find_by_email(email)
+        user = User.find_by(email: email)
+        return nil unless user
+        user
+    end
+
     def password=(password)
         @password = password
         self.password_digest = BCrypt::Password.create(password)
