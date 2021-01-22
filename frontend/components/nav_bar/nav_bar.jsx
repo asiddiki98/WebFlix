@@ -7,9 +7,6 @@ class NavBar extends React.Component {
 
         
     }
-
-  
-
     render(){
 
         let display, klass;
@@ -24,9 +21,13 @@ class NavBar extends React.Component {
         } 
         if (this.props.currentUser)  {
             display = (
-                <div>
-                    <button onClick={this.props.logout}>Sign Out</button>
+                <div className="nav-bar-dropdown">
+                    <button className={"dropdown-button"}>&#8964;</button>
+                    <div className="dropdown-content">
+                        <button onClick={this.props.logout}> logout</button>
+                    </div>
                 </div>
+                
             )
         } else if ( this.props.match.isExact || this.props.location.pathname === "/signup") {
             display = (

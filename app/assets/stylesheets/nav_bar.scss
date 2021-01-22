@@ -10,6 +10,7 @@ header.register-nav-bar{
     background-size: cover;
     background-color: rgba(8, 8, 8, 0.644); // Tint color
     background-blend-mode: multiply;
+    height: 10%;
 }
 
 
@@ -81,3 +82,56 @@ header > div.signup-nav-bar{
 div > a.signup-nav-bar:hover{
     text-decoration: underline;
 }
+
+// login
+header.login-nav-bar{
+    display: flex;
+    justify-content: left;
+    padding: 40px 0px 20px 0px ;
+    background: inherit;
+    background: url("netflix_background_image.jpeg")  no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: rgba(8, 8, 8, 0.644); // Tint color
+    background-blend-mode: multiply;
+    
+}
+
+
+img.login-nav-bar{
+    width: 150px;
+    height: 40px;
+    padding: 0 0 0 40px;
+}
+
+// signed in
+
+.dropdown-button {
+  background: transparent;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+
+  border: none;
+}
+
+.nav-bar-dropdown {
+  position: relative;
+  display: inline-block;
+  width: 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+
+.nav-bar-dropdown:hover .dropdown-content {display: block;}
+
+.nav-bar-dropdown:hover .dropdown-button {background-color: red;}

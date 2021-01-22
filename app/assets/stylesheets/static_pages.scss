@@ -11,4 +11,23 @@ html{
     background-size: cover;
     background-color: rgba(8, 8, 8, 0.644); // Tint color
     background-blend-mode: multiply;
+    height: 100%;
 }
+body{
+    height: 100%;
+}
+#root{
+    height: 100%;
+}
+
+.main-div{
+    height: 100%;
+}
+
+.between-header-footer{
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    padding: 20;
+}
+

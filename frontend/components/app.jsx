@@ -11,13 +11,15 @@ import { AuthRoute } from '../utils/route_utils'
 
 export default () => {
     return (
-        <div>
+        <div className={"main-div"}>
             <Route path="/" component={NavBarContainer}/>
+            <div className="between-header-footer">
             <Switch>
                 <AuthRoute exact path="/" component={RegisterContainer}/> 
                 <AuthRoute path="/signup" component={SignupContainer}/> 
                 <AuthRoute path="/login" component={LoginContainer}/> 
             </Switch>
+            </div>
             <Route path="/" component={Footer}/>
         </div>
     )
