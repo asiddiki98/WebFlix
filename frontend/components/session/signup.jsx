@@ -25,16 +25,24 @@ class Signup extends React.Component {
 
     render(){
         return (
-            <div className="signup-form">
-                <h2>Sign Up!</h2>
+            <div className="signup-div">
+
                 <form>
-                    <label>Email: 
-                        <input type="text" value={this.state.email} onChange={this.handleInput("email")}/>
-                    </label>
-                    <label>Password: 
-                        <input type="password" value={this.state.password} onChange={this.handleInput("password")}/>
-                    </label>
-                    <button onClick={this.handleSubmit}>Signup</button>
+                    <h1 className={"signup-h1"}>Create a password to start your</h1>
+                    <h1 className={"signup-h1"}> membership.</h1>
+                    <br/>
+                    <h2 className={"signup-h2"}>This is the last step and you're done!</h2>
+                    <h2 className={"signup-h2"}>We hate paperwork, too.</h2>
+                    <br/>
+
+                    <input className={"signup-email"} type="text" value={this.state.email} placeholder={" Email"} onChange={this.handleInput("email")}/>
+
+                    <br/>
+
+                    <input className={"signup-password"} type="password" value={this.state.password} placeholder={" Add a Password"} onChange={this.handleInput("password")}/>
+
+                    <br/>
+                    <button className={"signup-button"} onClick={this.handleSubmit}>Continue</button>
                 </form>
 
             </div>

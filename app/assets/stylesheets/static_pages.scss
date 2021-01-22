@@ -2,9 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 html{
-    // background-image: url("netflix_background_image.jpeg");
+     // background-image: url("netflix_background_image.jpeg");
     background: url("netflix_background_image.jpeg")  no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -12,5 +11,4 @@ html{
     background-size: cover;
     background-color: rgba(8, 8, 8, 0.644); // Tint color
     background-blend-mode: multiply;
-
 }

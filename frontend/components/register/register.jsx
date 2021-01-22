@@ -41,7 +41,7 @@ class Register extends React.Component{
                     <br/>
                     <h6>Ready to watch? Enter your email to create or restart your membership.</h6>
                     <div className={"register-email"}>
-                    <input type="text" value={this.state.email} onChange={this.handleInput("email")}/>
+                    <input type="text" value={this.state.email} placeholder=" Email Address" onChange={this.handleInput("email")}/>
                         <button onClick={this.handleSubmit}>GET STARTED &#10095;</button>
                     </div>
                 </form>

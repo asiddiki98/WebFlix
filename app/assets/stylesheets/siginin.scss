@@ -1,0 +1,31 @@
+div.signin-div{
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    height: 500px;
+    width: 100%;
+}
+
+form.signin-form{
+    display: inline-block;
+    text-align: center;
+    width: 500px;
+    background-color: rgba(0, 0, 0, 0.644);;
+}
+
+form > h2.signin-h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    font-weight: 500;
+    color: white;
+    text-align: left;
+    padding: 20px 0 0 50px;
+}
+
+.signin-email{
+    font-size: 20px;
+    height: 60px;
+    width: 400px;
+}
+
+

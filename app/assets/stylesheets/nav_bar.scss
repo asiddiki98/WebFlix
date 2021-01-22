@@ -1,20 +1,66 @@
-.sign-in-nav-bar{
+header.register-nav-bar{
     display: flex;
     justify-content: space-around;
-    padding: 20px 20px 20px 20px ;
+    padding: 40px 0px 20px 0px ;
+    background: inherit;
+    background: url("netflix_background_image.jpeg")  no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: rgba(8, 8, 8, 0.644); // Tint color
+    background-blend-mode: multiply;
 }
 
 
-.logo{
-    width: 200px;
-    height: 50px;
-    padding: 20px 20px 20px 20px ;
+img.register-nav-bar{
+    width: 150px;
+    height: 40px;
+    padding: 0px 20px 20px 0px ;
 }
 
-.sign-in-link{
+div > a.register-nav-bar{
     font-family: Arial, Helvetica, sans-serif;
     // font-weight: lighter;
     color: white;
+    font-size: 17px;
+    text-decoration: none;
+    height: 10px;
+
+
+}
+
+header > div.register-nav-bar{
+    background-color:	#E50914;
+    height: 10px;
+    padding: 10px 17px 17px 17px;
+    display: flex;
+    justify-content: center;
+    border-radius: 4px;
+
+}
+  
+// nav signup css
+
+header.signup-nav-bar{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 40px 0px 40px ;
+    background: inherit;
+    background-color: white;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.178);
+}
+
+img.signup-nav-bar{
+    width: 150px;
+    height: 40px;
+    padding: 0px 20px 20px 0px ;
+}
+
+div > a.signup-nav-bar{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 550;
+    color: rgba(0, 0, 0, 0.856);
     font-size: 20px;
     text-decoration: none;
     height: 10px;
@@ -22,12 +68,16 @@
 
 }
 
-.sign-in-div{
-    background-color:	#E50914;
+header > div.signup-nav-bar{
+    // background-color:	#E50914;
     height: 10px;
-    padding: 10px 20px 20px 20px;
+    padding: 10px 17px 17px 17px;
     display: flex;
     justify-content: center;
     border-radius: 4px;
 
+}
+
+div > a.signup-nav-bar:hover{
+    text-decoration: underline;
 }
