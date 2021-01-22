@@ -31,8 +31,8 @@ class Register extends React.Component{
 
     render(){
         return (
-            <div>
-                <form action="">
+            <div className={'register'}>
+                <form >
                     <h1>Unlimited movies, TV</h1>
                     <br/>
                     <h2>shows, and more.</h2>
@@ -40,8 +40,10 @@ class Register extends React.Component{
                     <h4>Watch anywhere. Cancel anytime.</h4>
                     <br/>
                     <h6>Ready to watch? Enter your email to create or restart your membership.</h6>
+                    <div className={"register-email"}>
                     <input type="text" value={this.state.email} onChange={this.handleInput("email")}/>
-                    <button onClick={this.handleSubmit}>GET STARTED</button>
+                        <button onClick={this.handleSubmit}>GET STARTED &#10095;</button>
+                    </div>
                 </form>
             </div>
         )

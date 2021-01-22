@@ -11,15 +11,15 @@ export default (props) => {
         )
       } else if ( props.match.isExact ) {
         display = (
-            <div>
-                <Link to="/login">Sign In</Link>
+            <div className={"sign-in-div"}>
+                <Link className={"sign-in-link"} to="/login">Sign In</Link>
             </div>
         )
       }
     return (
-        <header className="nav-bar">
+        <header className="sign-in-nav-bar">
             <img className="logo" src={window.logoUrl}/>
-
+            <br/>
             { display }
         </header>
     )
