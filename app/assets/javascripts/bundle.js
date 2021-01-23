@@ -341,8 +341,9 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
         }, "\u2304"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "dropdown-content"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+          className: "signout-button",
           onClick: this.props.logout
-        }, " logout")));
+        }, "Sign out of Webflix")));
       } else if (this.props.match.isExact || this.props.location.pathname === "/signup") {
         display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: klass
@@ -350,6 +351,18 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
           className: klass,
           to: "/login"
         }, "Sign In"));
+      } else if (this.props.match.isExact || this.props.location.pathname === "/signup" || this.props.location.pathname === '/login') {
+        display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: klass
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+          className: klass,
+          to: "/login"
+        }, "Sign In")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: klass
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+          className: klass,
+          to: "/login"
+        }, "Sign In")));
       }
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("header", {

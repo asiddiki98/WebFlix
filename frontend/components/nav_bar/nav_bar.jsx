@@ -24,7 +24,7 @@ class NavBar extends React.Component {
                 <div className="nav-bar-dropdown">
                     <button className={"dropdown-button"}>&#8964;</button>
                     <div className="dropdown-content">
-                        <button onClick={this.props.logout}> logout</button>
+                        <button className="signout-button" onClick={this.props.logout}>Sign out of Webflix</button>
                     </div>
                 </div>
                 
@@ -33,6 +33,17 @@ class NavBar extends React.Component {
             display = (
                 <div className={klass}>
                     <Link className={klass} to="/login">Sign In</Link>
+                </div>
+            )
+        } else if ( this.props.match.isExact || this.props.location.pathname === "/signup" || this.props.location.pathname === '/login') {
+            display = (
+                <div>
+                    <div className={klass}>
+                        <Link className={klass} to="/login">Sign In</Link>
+                    </div>
+                    <div className={klass}>
+                        <Link className={klass} to="/login">Sign In</Link>
+                    </div>
                 </div>
             )
         }

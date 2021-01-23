@@ -3,7 +3,7 @@ header.register-nav-bar{
     justify-content: space-around;
     padding: 40px 0px 20px 0px ;
     background: inherit;
-    background: image-url("netflix_background_image.jpeg")  no-repeat center center fixed;
+    background: image_url("netflix_background_image.jpeg")  no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -112,26 +112,41 @@ img.login-nav-bar{
   background: transparent;
   color: white;
   padding: 16px;
-  font-size: 16px;
-
+  font-size: 20px;
   border: none;
+  position: fixed;
 }
 
 .nav-bar-dropdown {
-  position: relative;
-  display: inline-block;
-  width: 10px;
+//   display: inline-block;
+//   width: 50px;
+    display: flex;
+    justify-content: center;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background: rgba(0, 0, 0, 0.431);
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
   z-index: 1;
+}
+
+.signout-button{
+    position: relative;
+    bottom: 100%;
+    background: rgba(0, 0, 0, 0.37);
+    color: white;
+    width: 150px;
+    border: none;
+    height: 50px;
+    margin-top: 5em;
 }
 
 
 .nav-bar-dropdown:hover .dropdown-content {display: block;}
 
-.nav-bar-dropdown:hover .dropdown-button {background-color: red;}
+.signout-button:hover{
+    background:rgba(0, 0, 0, 0.938);
+}
