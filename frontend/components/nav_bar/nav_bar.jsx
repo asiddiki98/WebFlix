@@ -35,17 +35,6 @@ class NavBar extends React.Component {
                     <Link className={klass} to="/login">Sign In</Link>
                 </div>
             )
-        } else if ( this.props.match.isExact || this.props.location.pathname === "/signup" || this.props.location.pathname === '/login') {
-            display = (
-                <div>
-                    <div className={klass}>
-                        <Link className={klass} to="/login">Sign In</Link>
-                    </div>
-                    <div className={klass}>
-                        <Link className={klass} to="/login">Sign In</Link>
-                    </div>
-                </div>
-            )
         }
     
        
