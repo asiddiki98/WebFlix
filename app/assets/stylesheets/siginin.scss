@@ -64,6 +64,9 @@ form > h2.signin-h2{
     border-radius: 4px;
     cursor: pointer;
 }
+.signin-button:hover{
+    background-color: rgba(255, 0, 0, 0.815);
+}
 
 .signin-password::-webkit-input-placeholder, .signin-email::-webkit-input-placeholder {
   color: darkgray;

@@ -27,8 +27,6 @@ div > a.register-nav-bar{
     font-size: 17px;
     text-decoration: none;
     height: 10px;
-
-
 }
 
 header > div > div.register-nav-bar{
@@ -63,9 +61,14 @@ button.demo{
     cursor: pointer;
 
 }
-button.demo:hover{
-    
+
+div > div.register-nav-bar:hover{
+    background-color: rgba(255, 0, 0, 0.815);
 }
+button.demo:hover{
+    background-color: rgba(255, 0, 0, 0.815);
+}
+
   
 // nav signup css
 
