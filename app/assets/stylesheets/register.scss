@@ -63,6 +63,7 @@ div.register-email > button{
     width: 250px;
     height: 68px;
     padding: 20px;
+    cursor: pointer;
 }
 
 div.register-email > input {
@@ -71,14 +72,6 @@ div.register-email > input {
     width: 400px;
 }
 
-footer.footer{
-    border-top: 10px solid rgba(128, 128, 128, 0.178);
-    background-color: black;
-    height: 15%;
-    position: fixed;
-    min-width: 100%;
-    bottom: 0;
-}
 
 div.register-email > button:hover{
     background-color: rgba(255, 0, 0, 0.815);

@@ -32,8 +32,6 @@ export const checkEmail = (emailObj) => {
     }
 }
 
-
-
 export const createNewUser = (formUser) => {
     return (dispatch) => {
         return APIUtil.postUser(formUser).then((user) => {
@@ -55,3 +53,4 @@ export const logout = () => {
         })
     }
 }
+

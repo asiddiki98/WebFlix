@@ -62,7 +62,7 @@ form > h2.signin-h2{
     margin-top: 1em;
     border: inherit;
     border-radius: 4px;
-
+    cursor: pointer;
 }
 
 .signin-password::-webkit-input-placeholder, .signin-email::-webkit-input-placeholder {
@@ -76,6 +76,7 @@ form > h2.signin-h2{
     font-family: Arial, Helvetica, sans-serif;
     color: darkgray;
     display: inline-block;
+    margin-right: 5px;
 }
 
 .signin-link{

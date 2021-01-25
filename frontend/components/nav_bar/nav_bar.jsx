@@ -5,7 +5,17 @@ class NavBar extends React.Component {
     constructor(props){
         super(props)
 
+        this.loginDemo = this.loginDemo.bind(this)
         
+    }
+
+    loginDemo(){
+        const demo = {
+            email: "Demo",
+            password: "hunter12"
+        }
+
+        this.props.login(demo)
     }
     render(){
 
@@ -21,8 +31,8 @@ class NavBar extends React.Component {
         } 
         if (this.props.currentUser)  {
             display = (
-                <div className="nav-bar-dropdown">
-                    <button className={"dropdown-button"}>&#8964;</button>
+                <div className="profile-dropdown">
+                    <button className={"dropdown-button"}><img className="profile" src={window.profileUrl} /> <div className="caret">&#9660;</div></button>
                     <div className="dropdown-content">
                         <button className="signout-button" onClick={this.props.logout}>Sign out of Webflix</button>
                     </div>
@@ -31,9 +41,16 @@ class NavBar extends React.Component {
             )
         } else if ( this.props.match.isExact || this.props.location.pathname === "/signup") {
             display = (
-                <div className={klass}>
-                    <Link className={klass} to="/login">Sign In</Link>
+                <div className="demo-div">
+                    <button className="demo" onClick={this.loginDemo}>Demo</button>
+                    <div className={klass}>
+                        <Link className={klass} to="/login">Sign In</Link>
+                    </div>
                 </div>
+            )
+        } else {
+            display = (
+                <button className="demo" onClick={this.loginDemo}>Demo</button>
             )
         }
     

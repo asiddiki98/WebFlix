@@ -31,14 +31,40 @@ div > a.register-nav-bar{
 
 }
 
-header > div.register-nav-bar{
+header > div > div.register-nav-bar{
     background-color:	#E50914;
     height: 10px;
     padding: 10px 17px 17px 17px;
     display: flex;
     justify-content: center;
     border-radius: 4px;
+    display: inline-block;
+    cursor: pointer;
+}
 
+div.demo-div{
+    display: flex;
+    height: 40px;
+}
+
+button.demo{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    background-color:	#E50914;
+    width: 90px;
+    height: 39px;
+    padding: 10px 0 10px 0;
+    margin-right: 5pc;
+    border-radius: 4px;
+    display: inline-block;
+    border: none;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+
+}
+button.demo:hover{
+    
 }
   
 // nav signup css
@@ -69,7 +95,7 @@ div > a.signup-nav-bar{
 
 }
 
-header > div.signup-nav-bar{
+header > div > div.signup-nav-bar{
     // background-color:	#E50914;
     height: 10px;
     padding: 10px 17px 17px 17px;
@@ -81,12 +107,13 @@ header > div.signup-nav-bar{
 
 div > a.signup-nav-bar:hover{
     text-decoration: underline;
+    cursor: pointer;
 }
 
 // login
 header.login-nav-bar{
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     padding: 40px 0px 20px 0px ;
     background: inherit;
     background: image-url("netflix_background_image.jpeg")  no-repeat center center fixed;
@@ -107,6 +134,19 @@ img.login-nav-bar{
 }
 
 // signed in
+header.logged-in-nav-bar{
+    background: black;
+}
+
+.profile{
+    height: 35px;
+    width: 35px;
+    margin-right: 10px;
+}
+.caret{
+    display: inline-block;
+    
+}
 
 .dropdown-button {
   background: transparent;
@@ -117,7 +157,7 @@ img.login-nav-bar{
   position: fixed;
 }
 
-.nav-bar-dropdown {
+.profile-dropdown {
 //   display: inline-block;
 //   width: 50px;
     display: flex;
@@ -127,7 +167,7 @@ img.login-nav-bar{
 .dropdown-content {
   display: none;
   position: absolute;
-  background: rgba(0, 0, 0, 0.431);
+  background: transparent;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 
   z-index: 1;
@@ -145,7 +185,7 @@ img.login-nav-bar{
 }
 
 
-.nav-bar-dropdown:hover .dropdown-content {display: block;}
+.profile-dropdown:hover .dropdown-content {display: block;}
 
 .signout-button:hover{
     background:rgba(0, 0, 0, 0.938);

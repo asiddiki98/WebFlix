@@ -256,9 +256,19 @@ var Footer = /*#__PURE__*/function (_React$Component) {
   _createClass(Footer, [{
     key: "render",
     value: function render() {
+      var klass;
+
+      if (this.props.location.pathname === "/") {
+        klass = "register-footer";
+      } else if (this.props.location.pathname === "/signup") {
+        klass = "signup-footer";
+      } else if (this.props.location.pathname === "/login") {
+        klass = "login-footer";
+      }
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("footer", {
-        className: "footer"
-      }, " this is footer");
+        className: klass
+      });
     }
   }]);
 
@@ -313,12 +323,25 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(NavBar);
 
   function NavBar(props) {
+    var _this;
+
     _classCallCheck(this, NavBar);
 
-    return _super.call(this, props);
+    _this = _super.call(this, props);
+    _this.loginDemo = _this.loginDemo.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(NavBar, [{
+    key: "loginDemo",
+    value: function loginDemo() {
+      var demo = {
+        email: "Demo",
+        password: "hunter12"
+      };
+      this.props.login(demo);
+    }
+  }, {
     key: "render",
     value: function render() {
       var display, klass;
@@ -335,10 +358,15 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
 
       if (this.props.currentUser) {
         display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-          className: "nav-bar-dropdown"
+          className: "profile-dropdown"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
           className: "dropdown-button"
-        }, "\u2304"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+          className: "profile",
+          src: window.profileUrl
+        }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "caret"
+        }, "\u25BC")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "dropdown-content"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
           className: "signout-button",
@@ -346,11 +374,21 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
         }, "Sign out of Webflix")));
       } else if (this.props.match.isExact || this.props.location.pathname === "/signup") {
         display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "demo-div"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+          className: "demo",
+          onClick: this.loginDemo
+        }, "Demo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: klass
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
           className: klass,
           to: "/login"
-        }, "Sign In"));
+        }, "Sign In")));
+      } else {
+        display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+          className: "demo",
+          onClick: this.loginDemo
+        }, "Demo");
       }
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("header", {
@@ -397,6 +435,9 @@ var mdtp = function mdtp(dispatch) {
   return {
     logout: function logout() {
       return dispatch((0,_actions_session__WEBPACK_IMPORTED_MODULE_2__.logout)());
+    },
+    login: function login(demo) {
+      return dispatch((0,_actions_session__WEBPACK_IMPORTED_MODULE_2__.login)(demo));
     }
   };
 };
