@@ -1,6 +1,6 @@
 header.register-nav-bar{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 40px 0px 20px 0px ;
     background: inherit;
     background: image_url("netflix_background_image.jpeg")  no-repeat center center fixed;
@@ -15,9 +15,10 @@ header.register-nav-bar{
 
 
 img.register-nav-bar{
-    width: 150px;
-    height: 40px;
+    width: 170px;
+    height: 60px;
     padding: 0px 20px 20px 0px ;
+    margin-left: 100px;
 }
 
 div > a.register-nav-bar{
@@ -43,6 +44,7 @@ header > div > div.register-nav-bar{
 div.demo-div{
     display: flex;
     height: 40px;
+    margin-right: 100px;
 }
 
 button.demo{
@@ -138,13 +140,25 @@ img.login-nav-bar{
 
 // signed in
 header.logged-in-nav-bar{
-    background: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 40px 40px 40px ;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.178);
+    background: rgba(0, 0, 0, 0.644);
+    position: fixed;
+    width: 100%;
+}
+
+img.logged-in-nav-bar{
+    width: 150px;
+    height: 40px;
+    padding: 0 0 0 40px;
 }
 
 .profile{
     height: 35px;
     width: 35px;
-    margin-right: 10px;
+    
 }
 .caret{
     display: inline-block;
@@ -165,6 +179,7 @@ header.logged-in-nav-bar{
 //   width: 50px;
     display: flex;
     justify-content: center;
+    margin-right: 100px;
 }
 
 .dropdown-content {

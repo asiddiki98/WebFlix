@@ -22,6 +22,20 @@ class Signup extends React.Component {
         e.preventDefault();
         this.props.createNewUser(this.state)
     }
+    renderErrors() {
+        return (
+            <ul className="errors" >
+                {this.props.errors.map((error, i) => (
+                    <li className="errors" key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
+    componentWillUnmount() {
+        this.props.clearErrors()
+    }
 
     render(){
         return (
@@ -42,6 +56,7 @@ class Signup extends React.Component {
                     <input className={"signup-password"} type="password" value={this.state.password} placeholder={" Add a Password"} onChange={this.handleInput("password")}/>
 
                     <br/>
+                        {this.renderErrors()}
                     <button className={"signup-button"} onClick={this.handleSubmit}>Continue</button>
                 </form>
 

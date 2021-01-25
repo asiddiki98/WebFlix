@@ -22,6 +22,20 @@ class Login extends React.Component {
         e.preventDefault();
         this.props.login(this.state)
     }
+    renderErrors() {
+        return (
+            <ul>
+                {this.props.errors.map((error, i) => (
+                    <li className="errors" key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
+    componentWillUnmount(){
+        this.props.clearErrors()
+    }
 
     render() {
         return (
@@ -34,7 +48,9 @@ class Login extends React.Component {
                         <br/>
                         <input className="signin-password" type="password" value={this.state.password} placeholder={" Password"} onChange={this.handleInput("password")} />
                         <br/>
+                        {this.renderErrors()}
                         <button className="signin-button" onClick={this.handleSubmit}>Sign In</button>
+                        
                         <div className="link">
                          <h1 className={"signin-p"}>New to Webflix?</h1>
                          <Link className={"signin-link"} to="/signup">Sign up now.</Link>

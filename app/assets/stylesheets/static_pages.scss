@@ -31,28 +31,18 @@ body{
     padding: 20;
 }
 
-footer.register-footer{
-    border-top: 10px solid rgba(128, 128, 128, 0.178);
-    background-color: black;
-    height: 15%;
-    position: fixed;
-    min-width: 100%;
-    bottom: 0;
-}
-footer.signup-footer{
-    border-top: 1px solid rgba(128, 128, 128, 0.178);
-    background-color: rgba(128, 128, 128, 0.178);
-    height: 15%;
-    position: fixed;
-    min-width: 100%;
-    bottom: 0;
+ul.errors{
+    margin-top: 10px;
+    list-style: square;
+    list-style-type: circle;
 }
 
-footer.login-footer{
-    border-top: 10px solid rgba(128, 128, 128, 0.178);
-    background-color: rgba(0, 0, 0, 0.644);
-    height: 15%;
-    position: fixed;
-    min-width: 100%;
-    bottom: 0;
+li.errors{
+    color: orange;
+}
+
+.browse{
+    background: black;
+    width: 100%;
+    height: 150%;
 }

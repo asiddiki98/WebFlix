@@ -1,14 +1,17 @@
 import { connect } from 'react-redux';
-import { login } from '../../actions/session'
+import { login, clearErrors } from '../../actions/session'
 import Login from './login'
 
 const mstp = (state, ownProps) => {
-    if (state.session.email) {
+    if (ownProps.location.state) {
         return {
-            email: state.session.email,
+        
+            errors: state.errors,
+            email: ownProps.location.state.email,
         }
     } else {
         return {
+            errors: state.errors,
             email: ""
         }
     }
@@ -17,7 +20,8 @@ const mstp = (state, ownProps) => {
 
 const mdtp = dispatch => {
     return {
-        login: formUser => dispatch(login(formUser))
+        login: formUser => dispatch(login(formUser)),
+        clearErrors: () => dispatch(clearErrors())
     }
 }
 

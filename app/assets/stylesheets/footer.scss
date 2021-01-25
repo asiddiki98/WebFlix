@@ -1,0 +1,43 @@
+footer.register-footer{
+    border-top: 10px solid rgba(128, 128, 128, 0.178);
+    background-color: black;
+    height: 15%;
+    position: fixed;
+    min-width: 100%;
+    bottom: 0;
+
+
+}
+footer.signup-footer{
+    border-top: 1px solid rgba(128, 128, 128, 0.178);
+    background-color: rgba(128, 128, 128, 0.178);
+    height: 15%;
+    position: fixed;
+    min-width: 100%;
+    bottom: 0;
+}
+
+footer.login-footer{
+    border-top: 10px solid rgba(128, 128, 128, 0.178);
+    background-color: rgba(0, 0, 0, 0.644);
+    height: 15%;
+    position: fixed;
+    min-width: 100%;
+    bottom: 0;
+}
+
+#github{
+    color: white;
+    padding-top: 30px;
+    padding-left: 80px;
+}
+
+.github{
+    margin-left: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.github:hover{
+    text-decoration: underline;
+}

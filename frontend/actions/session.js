@@ -1,8 +1,9 @@
 import * as APIUtil from '../utils/sessions'
 
-export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER"
-export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER"
-export const RECEIVE_EMAIL = "RECEIVE_EMAIL"
+export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
+export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
+export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
+export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
 const receiveCurrentUser = user => {
     return {
@@ -16,19 +17,23 @@ const logoutCurrentUser = () => {
         type: LOGOUT_CURRENT_USER
     }
 }
-
-const receiveEmail = (email) => {
+export const receiveErrors = errors => {
     return {
-        type: RECEIVE_EMAIL,
-        email,
+        type: RECEIVE_SESSION_ERRORS,
+        errors
     }
 }
 
+export const clearErrors = () => {
+    return {
+        type: CLEAR_ERRORS
+    }
+}
+
+
 export const checkEmail = (emailObj) => {
-    return (dispatch) => {
-        return APIUtil.checkEmail(emailObj).then((email) => {
-            dispatch(receiveEmail(email))
-        })
+    return () => {
+        return APIUtil.checkEmail(emailObj)
     }
 }
 
@@ -36,6 +41,8 @@ export const createNewUser = (formUser) => {
     return (dispatch) => {
         return APIUtil.postUser(formUser).then((user) => {
             dispatch(receiveCurrentUser(user))
+        }, (errors) => {
+            dispatch(receiveErrors(errors.responseJSON))
         })
     }
 }
@@ -43,6 +50,8 @@ export const login = (formUser) => {
     return (dispatch) => {
         return APIUtil.postSession(formUser).then((user) => {
             dispatch(receiveCurrentUser(user))
+        }, (errors) => {
+            dispatch(receiveErrors(errors.responseJSON))
         })
     }
 }

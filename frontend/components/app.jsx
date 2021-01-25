@@ -5,7 +5,8 @@ import NavBarContainer from './nav_bar/nav_bar_container';
 import LoginContainer from './session/login_container';
 import RegisterContainer from './register/register_container'
 import Footer from './footer'
-import { AuthRoute } from '../utils/route_utils'
+import { AuthRoute, ProtectedRoute } from '../utils/route_utils'
+import BrowseContainer from './browse/browse_container'
 
 
 
@@ -14,11 +15,12 @@ export default () => {
         <div className={"main-div"}>
             <Route path="/" component={NavBarContainer}/>
             <div className="between-header-footer">
-            <Switch>
-                <AuthRoute exact path="/" component={RegisterContainer}/> 
-                <AuthRoute path="/signup" component={SignupContainer}/> 
-                <AuthRoute path="/login" component={LoginContainer}/> 
-            </Switch>
+                <Switch>
+                    <ProtectedRoute path="/browse" component={BrowseContainer} />
+                    <AuthRoute exact path="/" component={RegisterContainer}/> 
+                    <AuthRoute path="/signup" component={SignupContainer}/> 
+                    <AuthRoute path="/login" component={LoginContainer}/> 
+                </Switch>
             </div>
             <Route path="/" component={Footer}/>
         </div>

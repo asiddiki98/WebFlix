@@ -20,7 +20,10 @@ class Register extends React.Component{
     handleSubmit(e) {
         e.preventDefault();
         this.props.checkEmail(this.state.email).then(() => {
-            this.props.history.push('/login')},
+            this.props.history.push({
+                pathname: '/login',
+                state: this.state
+            })},
         () => {
             this.props.history.push({
                 pathname: '/signup',

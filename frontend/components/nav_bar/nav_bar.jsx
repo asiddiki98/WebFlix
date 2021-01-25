@@ -26,7 +26,7 @@ class NavBar extends React.Component {
             klass = "signup-nav-bar"
         } else if (this.props.location.pathname === "/login") {
             klass = "login-nav-bar"
-        } else {
+        } else if (this.props.location.pathname === "/browse"){
             klass = "logged-in-nav-bar"
         } 
         if (this.props.currentUser)  {
@@ -57,8 +57,7 @@ class NavBar extends React.Component {
        
         return (
             <header className={klass}>
-                <img className={klass} src={window.logoUrl}/>
-                <br/>
+                <Link to="/"><img className={klass} src={window.logoUrl} /></Link> 
                 { display }
             </header>
         )
