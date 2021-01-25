@@ -24,9 +24,9 @@ class Signup extends React.Component {
     }
     renderErrors() {
         return (
-            <ul className="errors" >
+            <ul className="signup-errors" >
                 {this.props.errors.map((error, i) => (
-                    <li className="errors" key={`error-${i}`}>
+                    <li className="signup-errors" key={`error-${i}`}>
                         {error}
                     </li>
                 ))}

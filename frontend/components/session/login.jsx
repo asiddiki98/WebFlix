@@ -24,9 +24,9 @@ class Login extends React.Component {
     }
     renderErrors() {
         return (
-            <ul>
+            <ul className="signin-errors">
                 {this.props.errors.map((error, i) => (
-                    <li className="errors" key={`error-${i}`}>
+                    <li className="signin-errors" key={`error-${i}`}>
                         {error}
                     </li>
                 ))}
@@ -40,15 +40,17 @@ class Login extends React.Component {
     render() {
         return (
             <div className="signin-div">  
+           
                 <form className="signin-form">
+                    {this.renderErrors()}
                         <h2 className="signin-h2">Sign In</h2>
+                    
                     <div className="form-inner-div">
                         <br/>
                         <input className="signin-email" type="email" value={this.state.email} placeholder={" Email"} onChange={this.handleInput("email")} />
                         <br/>
                         <input className="signin-password" type="password" value={this.state.password} placeholder={" Password"} onChange={this.handleInput("password")} />
                         <br/>
-                        {this.renderErrors()}
                         <button className="signin-button" onClick={this.handleSubmit}>Sign In</button>
                         
                         <div className="link">

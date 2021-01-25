@@ -31,14 +31,25 @@ body{
     padding: 20;
 }
 
-ul.errors{
+ul.signup-errors{
     margin-top: 10px;
-    list-style: square;
-    list-style-type: circle;
+}
+ul.signin-errors{
+    margin-top: 50px;
+    margin-left: 30px;
+    width: 400px;
+    background: rgb(255, 208, 0);
+    border-radius: 5px;
 }
 
-li.errors{
-    color: orange;
+li.signup-errors{
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+}
+li.signin-errors{
+    color: white;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .browse{
