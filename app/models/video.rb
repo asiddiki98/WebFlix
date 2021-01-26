@@ -12,10 +12,18 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
-require 'test_helper'
+class Video < ApplicationRecord
 
-class VideoTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+    has_many :genre_joins,
+    primary_key: :id,
+    foreign_key: :genre_id,
+    class_name: :GenreJoin
+
+    has_many :genres,
+    through: :genre_joins,
+    source: :genre 
+
+    has_one_attached :video
+
+    has_one_attached :photo
 end
