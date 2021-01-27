@@ -104,7 +104,7 @@ __webpack_require__.r(__webpack_exports__);
 var RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 var LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 var RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
-var CLEAR_ERRORS = "CLEAR_ERRORS";
+var CLEAR_ERRORS = "CLEAR_ERRORS"; //regular action creators 
 
 var receiveCurrentUser = function receiveCurrentUser(user) {
   return {
@@ -129,7 +129,8 @@ var clearErrors = function clearErrors() {
   return {
     type: CLEAR_ERRORS
   };
-};
+}; //thunk action creators
+
 var checkEmail = function checkEmail(emailObj) {
   return function () {
     return _utils_sessions__WEBPACK_IMPORTED_MODULE_0__.checkEmail(emailObj);
@@ -233,6 +234,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+Object(function webpackMissingModule() { var e = new Error("Cannot find module './videos_index/videos_index_container'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -257,6 +259,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var Browse = /*#__PURE__*/function (_React$Component) {
   _inherits(Browse, _React$Component);
 
@@ -273,7 +276,7 @@ var Browse = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "browse"
-      });
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Object(function webpackMissingModule() { var e = new Error("Cannot find module './videos_index/videos_index_container'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), null));
     }
   }]);
 
@@ -1077,6 +1080,27 @@ var mdtp = function mdtp(dispatch) {
 
 /***/ }),
 
+/***/ "./frontend/reducers/entities.js":
+/*!***************************************!*\
+  !*** ./frontend/reducers/entities.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
+Object(function webpackMissingModule() { var e = new Error("Cannot find module './videos'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,redux__WEBPACK_IMPORTED_MODULE_1__.combineReducers)({
+  videos: Object(function webpackMissingModule() { var e = new Error("Cannot find module './videos'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())
+}));
+
+/***/ }),
+
 /***/ "./frontend/reducers/errors.js":
 /*!*************************************!*\
   !*** ./frontend/reducers/errors.js ***!
@@ -1123,15 +1147,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
-/* harmony import */ var _session__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./session */ "./frontend/reducers/session.js");
-/* harmony import */ var _errors__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./errors */ "./frontend/reducers/errors.js");
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
+/* harmony import */ var _entities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./entities */ "./frontend/reducers/entities.js");
+/* harmony import */ var _session__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./session */ "./frontend/reducers/session.js");
+/* harmony import */ var _errors__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./errors */ "./frontend/reducers/errors.js");
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,redux__WEBPACK_IMPORTED_MODULE_2__.combineReducers)({
-  session: _session__WEBPACK_IMPORTED_MODULE_0__.default,
-  errors: _errors__WEBPACK_IMPORTED_MODULE_1__.default
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,redux__WEBPACK_IMPORTED_MODULE_3__.combineReducers)({
+  entities: _entities__WEBPACK_IMPORTED_MODULE_0__.default,
+  session: _session__WEBPACK_IMPORTED_MODULE_1__.default,
+  errors: _errors__WEBPACK_IMPORTED_MODULE_2__.default
 }));
 
 /***/ }),
