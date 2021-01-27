@@ -16,7 +16,7 @@ class Video < ApplicationRecord
 
     has_many :genre_joins,
     primary_key: :id,
-    foreign_key: :genre_id,
+    foreign_key: :video_id,
     class_name: :GenreJoin
 
     has_many :genres,
@@ -26,4 +26,5 @@ class Video < ApplicationRecord
     has_one_attached :video
 
     has_one_attached :photo
+
 end

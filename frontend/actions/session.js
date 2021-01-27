@@ -5,6 +5,9 @@ export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
+
+//regular action creators 
+
 const receiveCurrentUser = user => {
     return {
         type: RECEIVE_CURRENT_USER,
@@ -30,6 +33,7 @@ export const clearErrors = () => {
     }
 }
 
+//thunk action creators
 
 export const checkEmail = (emailObj) => {
     return () => {
