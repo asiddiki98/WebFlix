@@ -1,11 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
+require 'open-uri'
 
 # movies
 Video.destroy_all
@@ -13,11 +6,11 @@ Genre.destroy_all
 GenreJoin.destroy_all
 
 insidious = Video.create(title: "Insidious: The Last Key", description: "scary", director: "somoeone", year: "1998")
-insidious.video.attach(io: File.open("/Users/azimsiddiki/Desktop/fullstacks_project/videos/Insidious_ The Last Key - Official Trailer (HD).mp4"), filename: "insidious.mp4")
-insidious.photo.attach(io: File.open("/Users/azimsiddiki/Desktop/fullstacks_project/photos/insidious.jpg"), filename: "insidious.jpg")
+insidious.video.attach(io: open('https://webflix-aa-seeds.s3.amazonaws.com/Insidious_+The+Last+Key+-+Official+Trailer+(HD).mp4'), filename: "insidious.mp4")
+insidious.photo.attach(io: open("https://webflix-aa-seeds.s3.amazonaws.com/insidious.jpg"), filename: "insidious.jpg")
 chucky = Video.create(title: "Childs Play", description: "scary", director: "somoeone", year: "1998")
-chucky.video.attach(io: File.open("/Users/azimsiddiki/Desktop/fullstacks_project/videos/Child's Play (1988) - Official Trailer (HD).mp4"), filename: "chucky.mp4")
-chucky.photo.attach(io: File.open("/Users/azimsiddiki/Desktop/fullstacks_project/photos/chucky.jpg"), filename: "chucky.jpg")
+chucky.video.attach(io: open("https://webflix-aa-seeds.s3.amazonaws.com/Child's+Play+(1988)+-+Official+Trailer+(HD).mp4"), filename: "chucky.mp4")
+chucky.photo.attach(io: open("https://webflix-aa-seeds.s3.amazonaws.com/insidious.jpg"), filename: "chucky.jpg")
 
 
 # genres
