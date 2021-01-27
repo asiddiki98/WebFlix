@@ -5,12 +5,10 @@ class VideoIndex extends React.Component{
 
 
     componentDidMount(){
-        debugger
         this.props.fetchVideos()
     }
 
     render(){
-        debugger
 
         const genres = {
             horror: this.props.videos.filter(el => el.genres.includes("Horror")),

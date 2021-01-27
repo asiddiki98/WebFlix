@@ -201,7 +201,6 @@ var receiveVideo = function receiveVideo(payload) {
 var fetchVideos = function fetchVideos() {
   return function (dispatch) {
     return _utils_videos__WEBPACK_IMPORTED_MODULE_0__.fetchVideos().then(function (payload) {
-      debugger;
       dispatch(receiveVideos(payload));
     });
   };
@@ -569,13 +568,11 @@ var VideoIndex = /*#__PURE__*/function (_React$Component) {
   _createClass(VideoIndex, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      debugger;
       this.props.fetchVideos();
     }
   }, {
     key: "render",
     value: function render() {
-      debugger;
       var genres = {
         horror: this.props.videos.filter(function (el) {
           return el.genres.includes("Horror");
@@ -620,7 +617,6 @@ __webpack_require__.r(__webpack_exports__);
 
 var mstp = function mstp(state, ownProps) {
   var videos = Object.values(state.entities.videos);
-  debugger;
   return {
     videos: videos
   };

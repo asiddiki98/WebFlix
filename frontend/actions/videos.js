@@ -25,7 +25,6 @@ const receiveVideo = (payload) => {
 export const fetchVideos = () => {
     return (dispatch) => {
         return APIUtil.fetchVideos().then((payload) =>{
-            debugger
             dispatch(receiveVideos(payload))
         })
     }

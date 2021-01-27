@@ -4,7 +4,7 @@ import VideoIndex from './videos_index'
 
 const mstp = (state, ownProps) => {
     const videos = Object.values(state.entities.videos)
-    debugger
+
     return {
         videos: videos
     }
