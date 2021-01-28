@@ -10,7 +10,7 @@ insidious.video.attach(io: URI.open('http://webflix-aa-seeds.s3.amazonaws.com/In
 insidious.photo.attach(io: URI.open("http://webflix-aa-seeds.s3.amazonaws.com/insidious.jpg"), filename: "insidious.jpg")
 chucky = Video.create(title: "Childs Play", description: "scary", director: "somoeone", year: "1998")
 chucky.video.attach(io: URI.open("http://webflix-aa-seeds.s3.amazonaws.com/Child's+Play+(1988)+-+Official+Trailer+(HD).mp4"), filename: "chucky.mp4")
-chucky.photo.attach(io: URI.open("http://webflix-aa-seeds.s3.amazonaws.com/insidious.jpg"), filename: "chucky.jpg")
+chucky.photo.attach(io: URI.open("https://webflix-aa-seeds.s3.amazonaws.com/chucky.jpg"), filename: "chucky.jpg")
 
 
 # genres

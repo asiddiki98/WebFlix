@@ -12,10 +12,12 @@ class VideoIndexRow extends React.Component{
             )
         })
         return(
-            <div>
-                <h1>{this.props.genreName.charAt(0).toUpperCase() + this.props.genreName.slice(1)}</h1>
+            <div> 
+                <h1 className="video-index-row">{this.props.genreName.charAt(0).toUpperCase() + this.props.genreName.slice(1)}</h1>
+            <div className="video-index-row">
                 {videos}
             </div>
+            </div >
         )
     }
 }

@@ -11,7 +11,7 @@ class Footer extends React.Component {
         } else if (this.props.location.pathname === "/login") {
             klass = "login-footer"
         } else if (this.props.location.pathname === "/browse")
-            klass = "register-footer"
+            klass = "loggedin-footer"
         return (
             <footer className={klass}> 
             <i id="github" className="fab fa-github"> </i> 

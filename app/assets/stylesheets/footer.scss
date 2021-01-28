@@ -18,6 +18,14 @@ footer.signup-footer{
 }
 
 footer.login-footer{
+       background: image_url("netflix_background_image.jpeg")  no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: rgba(8, 8, 8, 0.644); // Tint color
+    background-blend-mode: multiply;
+    height: 100%;
     border-top: 10px solid rgba(128, 128, 128, 0.178);
     background-color: rgba(0, 0, 0, 0.644);
     height: 15%;
@@ -40,4 +48,13 @@ footer.login-footer{
 
 .github:hover{
     text-decoration: underline;
+}
+
+.loggedin-footer{
+    border-top: 1px solid rgba(128, 128, 128, 0.178);
+    background-color:#131313;
+    height: 15%;
+    position: fixed;
+    min-width: 100%;
+    bottom: 0;
 }
