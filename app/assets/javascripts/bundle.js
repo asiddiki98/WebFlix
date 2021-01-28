@@ -689,13 +689,7 @@ var VideoIndex = /*#__PURE__*/function (_React$Component) {
       });
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "video-index"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("video", {
-        className: "main-video",
-        src: "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBMZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1d8647041e9d2c146ebe71ac5ad16ba304db222f/insidious.mp4",
-        "typeof": "video/mp4",
-        controls: false,
-        autoPlay: true
-      }), videoRows);
+      }, videoRows);
     }
   }]);
 

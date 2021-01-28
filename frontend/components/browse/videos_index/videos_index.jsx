@@ -23,7 +23,7 @@ class VideoIndex extends React.Component{
       
         return (
             <div className="video-index">
-                <video className="main-video" src="/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBMZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1d8647041e9d2c146ebe71ac5ad16ba304db222f/insidious.mp4" typeof="video/mp4" controls={false} autoPlay></video>
+                {/* <video className="main-video" src="/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBMZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1d8647041e9d2c146ebe71ac5ad16ba304db222f/insidious.mp4" typeof="video/mp4" controls={false} autoPlay></video> */}
                 {videoRows}
             </div>
         )
