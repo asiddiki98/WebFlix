@@ -21,8 +21,8 @@
  * Video Index has selection of movies split into genres                         
 
  * User has ability to preview on hover 
- 
-![](https://github.com/asiddiki98/WebFlix/blob/main/app/assets/images/Animated%20GIF-downsized_large.gif)
+
+![alt-text](https://github.com/asiddiki98/WebFlix/blob/main/app/assets/images/Animated%20GIF-downsized_large.gif)
  
  
  ### Coming Soon
