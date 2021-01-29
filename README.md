@@ -1,6 +1,7 @@
 # README
 
-  ![image of netflix](https://github.com/asiddiki98/WebFlix/blob/main/app/assets/images/logo.png)
+
+  <img src="https://github.com/asiddiki98/WebFlix/blob/main/app/assets/images/logo.png" width="200" height="50" />
   
   Webflix is a movie streaming platform inspired by the already existing popular streaming platform Netflix. Navigate to [Webflix](https://webflix-aa.herokuapp.com/#/) to view your favorite movies and tv-shows. 
   
