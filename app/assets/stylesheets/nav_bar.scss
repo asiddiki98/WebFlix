@@ -2,7 +2,7 @@ header.register-nav-bar{
      display: flex;
     justify-content: space-between;
     padding: 40px 0px 20px 0px ;
-    background: inherit;
+    // background: inherit;
     background: image-url("netflix_background_image.jpeg")  no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -10,6 +10,9 @@ header.register-nav-bar{
     background-size: cover;
     background-color: rgba(8, 8, 8, 0.644); // Tint color
     background-blend-mode: multiply;
+    position: absolute;
+    width: 100%;
+    z-index: 3;
     
 }
 
@@ -81,6 +84,9 @@ header.signup-nav-bar{
     background: inherit;
     background-color: white;
     border-bottom: 2px solid rgba(128, 128, 128, 0.178);
+    position: absolute;
+    width: 100%;
+    z-index: 3;
 }
 
 img.signup-nav-bar{
@@ -128,7 +134,9 @@ header.login-nav-bar{
     background-size: cover;
     background-color: rgba(8, 8, 8, 0.644); // Tint color
     background-blend-mode: multiply;
-    
+    position: absolute;
+    width: 100%;
+    z-index: 3;
 }
 
 

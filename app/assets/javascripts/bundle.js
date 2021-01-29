@@ -371,7 +371,8 @@ var Browse = /*#__PURE__*/function (_React$Component) {
           controls: false // onMouseOver={this.handleMouseIn()}
           // onMouseOut={this.handleMouseOut()}
           ,
-          autoPlay: true
+          autoPlay: true,
+          muted: true
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "main-vid-info"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
@@ -384,9 +385,11 @@ var Browse = /*#__PURE__*/function (_React$Component) {
           className: "main-video-play"
         }, "Play"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
           className: "main-video-add-to-list"
-        }, "Add to List")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mute__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_videos_index_videos_index_container__WEBPACK_IMPORTED_MODULE_1__.default, {
+        }, "Add to List")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mute__WEBPACK_IMPORTED_MODULE_2__.default, {
+          mainVideo: main
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_videos_index_videos_index_container__WEBPACK_IMPORTED_MODULE_1__.default, {
           videos: this.props.videos
-        })));
+        }));
       } else {
         display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_videos_index_videos_index_container__WEBPACK_IMPORTED_MODULE_1__.default, {
           videos: this.props.videos
@@ -761,7 +764,9 @@ var VideoIndexRow = /*#__PURE__*/function (_React$Component) {
           video: video
         });
       });
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "video-index-row-div"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
         className: "video-index-row"
       }, this.props.genreName.charAt(0).toUpperCase() + this.props.genreName.slice(1)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "video-index-row"
@@ -861,6 +866,9 @@ var VideoIndex = /*#__PURE__*/function (_React$Component) {
         }),
         comedy: this.props.videos.filter(function (el) {
           return el.genres.includes("Comedy");
+        }),
+        thriller: this.props.videos.filter(function (el) {
+          return el.genres.includes("Thriller");
         })
       };
       var videoRows = Object.keys(genres).map(function (genre, idx) {
@@ -977,7 +985,9 @@ var Footer = /*#__PURE__*/function (_React$Component) {
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("footer", {
         className: klass
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+        className: "github "
+      }, "CREATOR CREDENTIALS"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
         id: "github",
         className: "fab fa-github"
       }, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {

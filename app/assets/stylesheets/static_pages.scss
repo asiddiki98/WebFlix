@@ -23,14 +23,14 @@ body{
 
 .main-div{
     height: 100%;
-    // position: relative;
+    position: relative;
 }
 
 .between-header-footer{
-    height: 78%;
+    height: 100%;
     display: flex;
     justify-content: center;
-    padding: 20;
+    // padding: 20;
 }
 
 ul.signup-errors{

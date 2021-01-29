@@ -14,6 +14,7 @@ class Footer extends React.Component {
             klass = "loggedin-footer"
         return (
             <footer className={klass}> 
+                <h1 className="github ">CREATOR CREDENTIALS</h1>
             <i id="github" className="fab fa-github"> </i> 
                 <a className="github" href="https://github.com/asiddiki98"> Github</a>
             </footer>

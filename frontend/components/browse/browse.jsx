@@ -55,6 +55,7 @@ class Browse extends React.Component{
                     // onMouseOver={this.handleMouseIn()}
                     // onMouseOut={this.handleMouseOut()}
                     autoPlay
+                    muted
                     >
 
                     </video >
@@ -66,11 +67,11 @@ class Browse extends React.Component{
                             <button className="main-video-add-to-list">Add to List</button>
                           
                         </div>
-                    <Mute />
-                    <div>
+                    <Mute mainVideo={main}/>
+
                         
-                        <VideoIndexContainer videos={this.props.videos} />
-                    </div>
+                    <VideoIndexContainer videos={this.props.videos} />
+
                 </div >
             );
         } else {

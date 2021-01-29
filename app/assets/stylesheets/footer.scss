@@ -2,7 +2,7 @@ footer.register-footer{
     border-top: 10px solid rgba(128, 128, 128, 0.178);
     background-color: black;
     height: 15%;
-    position: fixed;
+    position: absolute;
     min-width: 100%;
     bottom: 0;
 
@@ -18,7 +18,7 @@ footer.signup-footer{
 }
 
 footer.login-footer{
-       background: image_url("netflix_background_image.jpeg")  no-repeat center center fixed;
+    background: image_url("netflix_background_image.jpeg")  no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -27,17 +27,25 @@ footer.login-footer{
     background-blend-mode: multiply;
     height: 100%;
     border-top: 10px solid rgba(128, 128, 128, 0.178);
-    background-color: rgba(0, 0, 0, 0.644);
+    background-color: rgba(0, 0, 0, 0.842);
     height: 15%;
-    position: fixed;
+    position: absolute;
     min-width: 100%;
     bottom: 0;
+}
+footer{
+    text-align: center;
 }
 
 #github{
     color: white;
+    padding-top: 10px;
+    // padding-left: 80px;
+}
+h1.github{
     padding-top: 30px;
-    padding-left: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
 }
 
 .github{
@@ -45,7 +53,9 @@ footer.login-footer{
     text-decoration: none;
     color: white;
 }
-
+#github:hover{
+    color: rgba(255, 0, 0, 0.815);
+}
 .github:hover{
     color: rgba(255, 0, 0, 0.815);
 }
@@ -54,7 +64,7 @@ footer.login-footer{
     border-top: 1px solid rgba(128, 128, 128, 0.178);
     background-color:#131313;
     height: 15%;
-    position: fixed;
+    position: absolute;
     min-width: 100%;
-    bottom: 0;
+      margin-top: -32767px;
 }

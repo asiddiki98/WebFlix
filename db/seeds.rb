@@ -19,12 +19,12 @@ GenreJoin.destroy_all
 
 horror = Genre.create(genre: "Horror")
 comedy = Genre.create(genre: "Comedy")
-action = Genre.create(genre: "action")
-drama = Genre.create(genre: "drama")
-fantasy = Genre.create(genre: "fantasy")
-mystery = Genre.create(genre: "mystery")
-romance = Genre.create(genre: "romance")
-thriller = Genre.create(genre: "thriller")
+action = Genre.create(genre: "Action")
+drama = Genre.create(genre: "Drama")
+fantasy = Genre.create(genre: "Fantasy")
+mystery = Genre.create(genre: "Mystery")
+romance = Genre.create(genre: "Romance")
+thriller = Genre.create(genre: "Thriller")
 scifi = Genre.create(genre: "Science-Fiction")
 
 # movies
@@ -145,15 +145,6 @@ clueless.photo.attach(io: URI.open("https://webflix-aa-seeds.s3.amazonaws.com/cl
 
 GenreJoin.create(video_id: clueless.id, genre_id: comedy.id)
 GenreJoin.create(video_id: clueless.id, genre_id: romance.id)
-
-
-
-hello = Video.create(title: "hello", description: "Shallow, rich and socially successful Cher is at the top of her Beverly Hills high school's pecking scale. Seeing herself as a matchmaker, Cher first coaxes two teachers into dating each other.", director: "Amy Heckerling", year: "1995")
-hello.video.attach(io: URI.open('https://webflix-aa-seeds.s3.amazonaws.com/hello+(1995)+Trailer+%231+_+Movieclips+Classic+Trailers.mp4'), filename: "hello.mp4")
-hello.photo.attach(io: URI.open("https://webflix-aa-seeds.s3.amazonaws.com/hello.jpeg"), filename: "hello.jpg")
-
-GenreJoin.create(video_id: hello.id, genre_id: comedy.id)
-GenreJoin.create(video_id: hello.id, genre_id: romance.id)
 
 
 
