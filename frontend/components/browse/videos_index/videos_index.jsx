@@ -4,9 +4,9 @@ import VideoIndexRow from './video_index_row/video_index_row_container'
 class VideoIndex extends React.Component{
 
 
-    componentDidMount(){
-        this.props.fetchVideos()
-    }
+    // componentDidMount(){
+    //     this.props.fetchVideos()
+    // }
 
     render(){
     
