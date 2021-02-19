@@ -3,6 +3,8 @@
 <div align="center">
   <img src="https://github.com/asiddiki98/WebFlix/blob/main/app/assets/images/logo.png" width="400" height="100" />
 </div>
+
+ ### Background and Overview
   Webflix is a movie streaming platform inspired by the already existing popular streaming platform Netflix. Navigate to [Webflix](https://webflix-aa.herokuapp.com/#/) to view your favorite movies and tv-shows. 
   
   
