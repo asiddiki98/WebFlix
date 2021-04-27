@@ -136,14 +136,59 @@ div.video-index{
 
 .video-index-row-div{
     position: relative;
+    button.previous{
+        position: absolute; 
+        z-index: 100;
+        left: 0;
+        background: transparent;
+        border: none;
+        color: transparent;
+        min-width: 100px;
+        min-height: 60%;
+        border-radius: 10px;
+        margin-top: 20px;
+         font-size: 40px;
+        &:hover{
+            background: rgba(128, 128, 128, 0.119);
+            color: white;
+           
+        }
+    }
+    button.next{
+        position: absolute;
+        z-index: 100;
+        right: 0;
+        background: transparent;
+        border: none;
+        color: transparent;
+        min-width: 100px;
+        min-height: 60%;
+        margin-top: 20px;
+        top: 13%;
+        border-radius: 10px;
+        font-size: 40px;
+        &:hover{
+            background: rgba(128, 128, 128, 0.119);
+            color: white;
+           
+        }
+    
+    }
 }
 
 div.video-index-row{
     display: flex;
-    margin-left: 40px;
-    overflow: hidden;
-    width: 100%;
+    margin-left: 25px;
+    padding-left: 30px;
+    margin-right: 25px;
+    padding-right: 30px;
+    overflow: scroll;
+    // width: 100%;
     position: relative;
+    scroll-behavior: smooth;
+}
+div.video-index-row::-webkit-scrollbar{
+    display: none;
 }
 
  h1.video-index-row{
@@ -152,13 +197,7 @@ div.video-index-row{
     font-size: 40px;
     margin-top: 10px;
     margin-left: 50px; 
-}
-ul {
-    display: flex;
-    transition: transform 5s;
-}
-.second-position {
-    transform: translateX(-430px);
+
 }
 div.video-index-item{
     height: 170px;
@@ -180,14 +219,14 @@ video.video-index-item{
 
 video.video-index-item:hover{
     // transform: scale(1.4);
-    -o-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    -webkit-transform: scale(1.2);
+    // -o-transform: scale(1.2);
+    // -ms-transform: scale(1.2);
+    // -webkit-transform: scale(1.2);
     transform: scale(1.2);
     z-index: 5;
     -webkit-transition: transform 1.05s ease-in-out;
-    -moz-transition:transform 1.05s ease-in-out;
-    -ms-transition:transform 1.05s ease-in-out;
+//     -moz-transition:transform 1.05s ease-in-out;
+//     -ms-transition:transform 1.05s ease-in-out;
 }
 
 .test-div{

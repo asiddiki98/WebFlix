@@ -334,7 +334,6 @@ var Browse = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleMouseOut",
     value: function handleMouseOut() {
-      debugger;
       return function (e) {
         e.target.load();
         e.target.pause();
@@ -351,7 +350,6 @@ var Browse = /*#__PURE__*/function (_React$Component) {
       min = Math.ceil(min);
       max = Math.floor(max);
       var ans = Math.floor(Math.random() * (max - min + 1) + min);
-      debugger;
       return ans;
     }
   }, {
@@ -361,7 +359,6 @@ var Browse = /*#__PURE__*/function (_React$Component) {
 
       if (this.props.videos[0]) {
         var main = this.props.videos[this.getRandomVideo(0, this.props.videos.length - 1)];
-        debugger;
         display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "browse-display-div"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("video", {
@@ -755,15 +752,27 @@ var VideoIndexRow = /*#__PURE__*/function (_React$Component) {
 
   var _super = _createSuper(VideoIndexRow);
 
-  function VideoIndexRow() {
+  function VideoIndexRow(props) {
+    var _this;
+
     _classCallCheck(this, VideoIndexRow);
 
-    return _super.apply(this, arguments);
+    _this = _super.call(this, props);
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(VideoIndexRow, [{
+    key: "handleClick",
+    value: function handleClick(number) {
+      var next = document.getElementById("".concat(this.props.genreName, "-index-row"));
+      next.scrollLeft += number;
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var videos = this.props.videos.map(function (video, idx) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_video_index_item_video_index_item__WEBPACK_IMPORTED_MODULE_1__.default, {
           key: "item-".concat(idx),
@@ -774,9 +783,20 @@ var VideoIndexRow = /*#__PURE__*/function (_React$Component) {
         className: "video-index-row-div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
         className: "video-index-row"
-      }, this.props.genreName.charAt(0).toUpperCase() + this.props.genreName.slice(1)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: "video-index-row"
-      }, videos));
+      }, this.props.genreName.charAt(0).toUpperCase() + this.props.genreName.slice(1)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+        className: "previous",
+        onClick: function onClick() {
+          return _this2.handleClick(-600);
+        }
+      }, "<"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "video-index-row",
+        id: "".concat(this.props.genreName, "-index-row")
+      }, videos), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+        className: "next",
+        onClick: function onClick() {
+          return _this2.handleClick(600);
+        }
+      }, ">"));
     }
   }]);
 
