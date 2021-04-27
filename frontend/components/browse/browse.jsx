@@ -19,7 +19,6 @@ class Browse extends React.Component{
     }
 
     handleMouseOut() {
-        debugger
         return (e) => {
             e.target.load()
             e.target.pause();
@@ -35,7 +34,7 @@ class Browse extends React.Component{
         min = Math.ceil(min);
         max = Math.floor(max);
         let ans =  Math.floor(Math.random() * (max - min + 1) + min);
-        debugger
+
         return ans
     }
 
@@ -43,11 +42,12 @@ class Browse extends React.Component{
         let display;
         if (this.props.videos[0]){
            let main = this.props.videos[this.getRandomVideo(0, (this.props.videos.length -1))];
-           debugger
+    
             display = (
             
                 <div className="browse-display-div">
                     <video 
+                    id="main-video"
                     className="main-video" 
                     src={main.videoUrl} 
                     poster={main.photoUrl} 
@@ -56,6 +56,7 @@ class Browse extends React.Component{
                     // onMouseOut={this.handleMouseOut()}
                     autoPlay
                     muted
+                    loop
                     >
 
                     </video >

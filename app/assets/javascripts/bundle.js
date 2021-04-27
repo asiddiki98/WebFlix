@@ -334,7 +334,6 @@ var Browse = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleMouseOut",
     value: function handleMouseOut() {
-      debugger;
       return function (e) {
         e.target.load();
         e.target.pause();
@@ -351,7 +350,6 @@ var Browse = /*#__PURE__*/function (_React$Component) {
       min = Math.ceil(min);
       max = Math.floor(max);
       var ans = Math.floor(Math.random() * (max - min + 1) + min);
-      debugger;
       return ans;
     }
   }, {
@@ -361,10 +359,10 @@ var Browse = /*#__PURE__*/function (_React$Component) {
 
       if (this.props.videos[0]) {
         var main = this.props.videos[this.getRandomVideo(0, this.props.videos.length - 1)];
-        debugger;
         display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "browse-display-div"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("video", {
+          id: "main-video",
           className: "main-video",
           src: main.videoUrl,
           poster: main.photoUrl,
@@ -372,7 +370,8 @@ var Browse = /*#__PURE__*/function (_React$Component) {
           // onMouseOut={this.handleMouseOut()}
           ,
           autoPlay: true,
-          muted: true
+          muted: true,
+          loop: true
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "main-vid-info"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
@@ -503,14 +502,18 @@ var Mute = /*#__PURE__*/function (_React$Component) {
   _createClass(Mute, [{
     key: "handleSound",
     value: function handleSound() {
+      var mutebtn = document.getElementById("main-video");
+
       if (this.state.sound === true) {
         this.setState({
           sound: false
         });
+        mutebtn.muted = !mutebtn.muted;
       } else if (this.state.sound === false) {
         this.setState({
           sound: true
         });
+        mutebtn.muted = !mutebtn.muted;
       }
     }
   }, {
@@ -519,17 +522,17 @@ var Mute = /*#__PURE__*/function (_React$Component) {
       var display;
 
       if (this.state.sound) {
-        display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+        display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
           className: "sound",
           onClick: this.handleSound,
           src: window.soundUrl
-        });
+        }, "unmute");
       } else {
-        display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+        display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
           className: "mute",
           onClick: this.handleSound,
           src: window.muteUrl
-        });
+        }, " mute");
       }
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -749,15 +752,27 @@ var VideoIndexRow = /*#__PURE__*/function (_React$Component) {
 
   var _super = _createSuper(VideoIndexRow);
 
-  function VideoIndexRow() {
+  function VideoIndexRow(props) {
+    var _this;
+
     _classCallCheck(this, VideoIndexRow);
 
-    return _super.apply(this, arguments);
+    _this = _super.call(this, props);
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(VideoIndexRow, [{
+    key: "handleClick",
+    value: function handleClick(number) {
+      var next = document.getElementById("".concat(this.props.genreName, "-index-row"));
+      next.scrollLeft += number;
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var videos = this.props.videos.map(function (video, idx) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_video_index_item_video_index_item__WEBPACK_IMPORTED_MODULE_1__.default, {
           key: "item-".concat(idx),
@@ -768,9 +783,20 @@ var VideoIndexRow = /*#__PURE__*/function (_React$Component) {
         className: "video-index-row-div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
         className: "video-index-row"
-      }, this.props.genreName.charAt(0).toUpperCase() + this.props.genreName.slice(1)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: "video-index-row"
-      }, videos));
+      }, this.props.genreName.charAt(0).toUpperCase() + this.props.genreName.slice(1)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+        className: "previous",
+        onClick: function onClick() {
+          return _this2.handleClick(-600);
+        }
+      }, "<"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "video-index-row",
+        id: "".concat(this.props.genreName, "-index-row")
+      }, videos), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+        className: "next",
+        onClick: function onClick() {
+          return _this2.handleClick(600);
+        }
+      }, ">"));
     }
   }]);
 

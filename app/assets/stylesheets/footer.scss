@@ -19,9 +19,6 @@ footer.signup-footer{
 
 footer.login-footer{
     background: image_url("netflix_background_image.jpeg")  no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
     background-color: rgba(8, 8, 8, 0.644); // Tint color
     background-blend-mode: multiply;
@@ -40,24 +37,29 @@ footer{
 #github{
     color: white;
     padding-top: 10px;
+    transition: 0.3s;
     // padding-left: 80px;
 }
 h1.github{
     padding-top: 30px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    transition: 0.3s;
 }
 
 .github{
     margin-left: 5px;
     text-decoration: none;
     color: white;
+    transition: 0.3s;
 }
 #github:hover{
     color: rgba(255, 0, 0, 0.815);
+    
 }
 .github:hover{
     color: rgba(255, 0, 0, 0.815);
+    
 }
 
 .loggedin-footer{
@@ -66,5 +68,4 @@ h1.github{
     height: 15%;
     position: absolute;
     min-width: 100%;
-      margin-top: -32767px;
-}
+}   
