@@ -1,25 +1,14 @@
 div.signin-div{
+     background: image_url("netflix_background_image.jpeg")  no-repeat center center fixed;
     display: flex;
     justify-content: center;
-    // margin-right: 10;
-    // margin-top: 3em;
-    // height: 40%;
-    // width: 50%;
-    // height: 600px;
-    // position: relative;
-    height: 75%;
-    width: 100%;
-     background: image_url("netflix_background_image.jpeg")  no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+    width: -webkit-fill-available;
     background-size: cover;
     background-blend-mode: multiply;
-    background-color: rgba(8, 8, 8, 0.644); // Tint color
-//     height: 100%;
-    position: absolute;
-    padding: 150px;
+    background-color: rgba(8, 8, 8, 0.644);
+    padding: 100px;
 }
+
 
 form.signin-form{
     display: inline-block;

@@ -27,10 +27,11 @@ body{
 }
 
 .between-header-footer{
-    height: 100%;
+    // height: 100%;
     display: flex;
     justify-content: center;
-    // padding: 20;
+    min-height: 100vh;
+    position: relative;
 }
 
 ul.signup-errors{

@@ -365,6 +365,7 @@ var Browse = /*#__PURE__*/function (_React$Component) {
         display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "browse-display-div"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("video", {
+          id: "main-video",
           className: "main-video",
           src: main.videoUrl,
           poster: main.photoUrl,
@@ -372,7 +373,8 @@ var Browse = /*#__PURE__*/function (_React$Component) {
           // onMouseOut={this.handleMouseOut()}
           ,
           autoPlay: true,
-          muted: true
+          muted: true,
+          loop: true
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "main-vid-info"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
@@ -503,14 +505,18 @@ var Mute = /*#__PURE__*/function (_React$Component) {
   _createClass(Mute, [{
     key: "handleSound",
     value: function handleSound() {
+      var mutebtn = document.getElementById("main-video");
+
       if (this.state.sound === true) {
         this.setState({
           sound: false
         });
+        mutebtn.muted = !mutebtn.muted;
       } else if (this.state.sound === false) {
         this.setState({
           sound: true
         });
+        mutebtn.muted = !mutebtn.muted;
       }
     }
   }, {
@@ -519,17 +525,17 @@ var Mute = /*#__PURE__*/function (_React$Component) {
       var display;
 
       if (this.state.sound) {
-        display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+        display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
           className: "sound",
           onClick: this.handleSound,
           src: window.soundUrl
-        });
+        }, "unmute");
       } else {
-        display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+        display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
           className: "mute",
           onClick: this.handleSound,
           src: window.muteUrl
-        });
+        }, " mute");
       }
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {

@@ -45,10 +45,7 @@
     // overflow-wrap: break-word;
     margin-bottom: 2px;
 }
-.main-video-title:hover{
-    color:white;
 
-}
 .main-video-collection{
     font-family: Arial, Helvetica, sans-serif;
     position: static;
@@ -73,12 +70,7 @@
     margin-bottom: 5px;
 
 }
-.main-video-description:hover{
-    color:rgba(255, 0, 0, 0.815);
-}
-.main-video-collection:hover{
-    color:white;
-}
+
 
 
 .main-video-play{
@@ -94,10 +86,12 @@
     font-weight: bold;
     display: inline-block;
     font-family: Arial, Helvetica, sans-serif;
+    transition: 0.3s;
+    &:hover{
+     background:rgba(78, 76, 76, 0.815);
+    }
 }
-.main-video-play:hover{
-    background:rgba(78, 76, 76, 0.815);
-}
+
 .main-video-add-to-list{
     position: static;
     display: inline-block;
@@ -110,10 +104,10 @@
     font-size: 100%;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
-
-}
-.main-video-add-to-list:hover{
-    background:rgba(78, 76, 76, 0.815);
+    transition: 0.3s;
+    &:hover{
+        background:rgba(78, 76, 76, 0.815);
+    }
 }
 
 .sound-div{
@@ -147,7 +141,7 @@ div.video-index{
 div.video-index-row{
     display: flex;
     margin-left: 40px;
-    // overflow: hidden;
+    overflow: hidden;
     width: 100%;
     position: relative;
 }

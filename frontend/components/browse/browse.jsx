@@ -48,6 +48,7 @@ class Browse extends React.Component{
             
                 <div className="browse-display-div">
                     <video 
+                    id="main-video"
                     className="main-video" 
                     src={main.videoUrl} 
                     poster={main.photoUrl} 
@@ -56,6 +57,7 @@ class Browse extends React.Component{
                     // onMouseOut={this.handleMouseOut()}
                     autoPlay
                     muted
+                    loop
                     >
 
                     </video >

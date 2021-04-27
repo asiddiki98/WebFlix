@@ -10,23 +10,26 @@ class Mute extends React.Component{
         this.handleSound = this.handleSound.bind(this)
     }
     handleSound() {
+        let mutebtn = document.getElementById("main-video")
         if (this.state.sound === true) {
             this.setState({ sound: false })
+           mutebtn.muted = !mutebtn.muted
         } else if (this.state.sound === false) {
             this.setState({ sound: true })
+            mutebtn.muted = !mutebtn.muted
         }
 
     }
     render(){
         let display; 
-        if (this.state.sound){
-            display = <img className="sound" onClick={this.handleSound} src={window.soundUrl}/>
+        if (this.state.sound){  
+            display = <button className="sound" onClick={this.handleSound} src={window.soundUrl}>unmute</button>
         } else {
-            display =  <img className="mute" onClick={this.handleSound} src={window.muteUrl}/> 
+            display =  <button className="mute" onClick={this.handleSound} src={window.muteUrl}> mute</button> 
         }
         return (
             <div className="sound-div">
-                {display}
+                {display} 
             </div>
         )
     }
