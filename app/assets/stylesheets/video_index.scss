@@ -138,13 +138,13 @@ div.video-index{
     position: relative;
     button.previous{
         position: absolute; 
-        z-index: 100;
+        z-index: 90;
         left: 0;
         background: transparent;
         border: none;
         color: transparent;
         min-width: 100px;
-        min-height: 60%;
+        min-height: 53%;
         border-radius: 10px;
         margin-top: 20px;
          font-size: 40px;
@@ -156,14 +156,14 @@ div.video-index{
     }
     button.next{
         position: absolute;
-        z-index: 100;
+        z-index: 90;
         right: 0;
         background: transparent;
         border: none;
         color: transparent;
         min-width: 100px;
-        min-height: 60%;
-        margin-top: 20px;
+        min-height: 53%;
+        margin-top: 18px;
         top: 13%;
         border-radius: 10px;
         font-size: 40px;
@@ -182,7 +182,8 @@ div.video-index-row{
     padding-left: 30px;
     margin-right: 25px;
     padding-right: 30px;
-    overflow: scroll;
+    overflow-x: scroll;
+    overflow-y: visible;
     // width: 100%;
     position: relative;
     scroll-behavior: smooth;
@@ -202,7 +203,6 @@ div.video-index-row::-webkit-scrollbar{
 div.video-index-item{
     height: 170px;
     width: 280px;
-    margin: 20px 10px 0px 0;
     position: relative;
 
 }
@@ -218,31 +218,41 @@ video.video-index-item{
 }
 
 video.video-index-item:hover{
-    // transform: scale(1.4);
-    // -o-transform: scale(1.2);
-    // -ms-transform: scale(1.2);
-    // -webkit-transform: scale(1.2);
-    transform: scale(1.2);
-    z-index: 5;
-    -webkit-transition: transform 1.05s ease-in-out;
-//     -moz-transition:transform 1.05s ease-in-out;
-//     -ms-transition:transform 1.05s ease-in-out;
+ border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
 }
 
-.test-div{
+.video-index-item-option-div{
     display: flex;
-    height: 250px;
-    position: static;
+    height: 240px;
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+
+
 }
 
-.test-div:hover{
+.video-index-item-option-div:hover{
+    border-radius: 20px;
+    border-width: thick;
+    z-index: 100;
+    background: #131313;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.377), 0 8px 16px rgba(0, 0, 0, 0.356);
+    transform: scale(1.11) translateY(-5px);
+    z-index: 20;
+    -webkit-transition: transform 1.05s ease-in-out ;
+    // transform: translateY(-20px);
     position: relative;
-    .test{
-        display: inline-block;
-    };
-    .test-2{
-        display: inline-block;
-    }
+
+        .test{
+            display: inline-block;
+        };
+        .test-2{
+            display: inline-block;
+        }
+        .open{
+            display: inline-block;
+        }
     
 }
 
@@ -263,5 +273,56 @@ video.video-index-item:hover{
     width:30px;
     max-height:30px;
     bottom: 5%;
-    left: 0%;
+    left: 2%;
+}
+.open{
+     display: none;
+    // margin-top: 110px;
+    position: absolute;
+    width: 50px;
+    max-height:30px;
+    bottom: 5%;
+    left: 80%;
+}
+
+// .test-div-2{
+//     background: red;
+//     // margin-top: 110px;
+//     position: absolute;
+//     width:30px;
+//     max-height:30px;
+//     bottom: 5%;
+//     left: 0%;
+//     box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+// }
+.modal-child{
+     position: fixed;
+    align-self: center;
+    height: 80vh;
+    width: 80vh;
+    background: #131313;;
+   transform: translate(0px, -110px);
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.509), 0 8px 16px rgba(0, 0, 0, 0.509);
+   border-radius: 10px;
+    z-index: 100;
+    flex-shrink: 0;
+    
+}
+
+.modal-background{
+   position: absolute;
+ 
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-video{
+    height: 50%;
+	width: 100%;
+    border-radius: 1px;
+    object-fit: fill;
+    // position: absolute;
 }

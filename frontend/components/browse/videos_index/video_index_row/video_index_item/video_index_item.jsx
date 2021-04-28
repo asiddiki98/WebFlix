@@ -1,5 +1,8 @@
 import React from 'react'
 import ItemOptions from './item_options'
+import { openModal } from '../../../../../actions/modal'
+
+import { connect } from 'react-redux'
 
 class VideoIndexItem extends React.Component{
 
@@ -19,7 +22,7 @@ class VideoIndexItem extends React.Component{
     }
     render(){
         return(
-            <div className='test-div'>
+            <div className='video-index-item-option-div'>
                 <div className="video-index-item">
                     
                     <video 
@@ -32,12 +35,25 @@ class VideoIndexItem extends React.Component{
                     controls={false}>
                         
                     </video>
-                    
+      
                 </div>
-                <ItemOptions />
+                <ItemOptions video={this.props.video} open={this.props.littleModal}/>
+                    
             </div>
         )
     }
 }
 
-export default VideoIndexItem
+const mstp = (state) => {
+    return {
+        modal: state.modal
+    }
+}
+
+const mdtp = (dispatch) => {
+    return {
+        littleModal: (video) => dispatch(openModal(video))
+    }
+}
+
+export default connect(mstp, mdtp)(VideoIndexItem)

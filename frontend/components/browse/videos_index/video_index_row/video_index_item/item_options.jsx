@@ -1,7 +1,14 @@
-import React from 'react' 
+import React from 'react'
+import Modal from '../../../../modals/first_modal'
+import { openModal } from '../../../../../actions/modal'
 
 
 class ItemOptions extends React.Component{
+
+    openModal(){
+        this.props.open(this.props.video)
+    }
+    
     render(){
         return (
             <div className='test-div-2'>
@@ -23,6 +30,7 @@ class ItemOptions extends React.Component{
                 TYgMy4yMTA2NywtNy4xNjY2NyA3LjE2NjY3LC03LjE2NjY3djBjMy45NTYsMCA3LjE2NjY3LDMuMjEwNjcgNy4xNjY2Nyw3LjE2NjY3djIxLjVo
                 MjEuNWMzLjk1NiwwIDcuMTY2NjcsMy4yMTA2NyA3LjE2NjY3LDcuMTY2Njd2MGMwLDMuOTU2IC0zLjIxMDY3LDcuMTY2NjcgLTcuMTY2NjcsNy4
                 xNjY2N3oiPjwvcGF0aD48L2c+PC9nPjwvZz48L3N2Zz4=" />
+                <button  className="open" onClick={() => this.openModal()}> open </button>
             </div>
         )
     }
