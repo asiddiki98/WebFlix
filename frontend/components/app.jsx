@@ -7,6 +7,7 @@ import RegisterContainer from './register/register_container'
 import Footer from './footer'
 import { AuthRoute, ProtectedRoute } from '../utils/route_utils'
 import BrowseContainer from './browse/browse_container'
+import Modal from './modals/first_modal'
 
 
 
@@ -15,6 +16,7 @@ export default () => {
         <div className={"main-div"}>
             <Route path="/" component={NavBarContainer}/>
             <div className="between-header-footer">
+                <Modal />
                 <Switch>
                     <ProtectedRoute path="/browse" component={BrowseContainer} />
                     <AuthRoute exact path="/" component={RegisterContainer}/> 

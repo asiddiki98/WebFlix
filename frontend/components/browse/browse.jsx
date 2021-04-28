@@ -3,6 +3,7 @@ import VideoIndexContainer from './videos_index/videos_index_container';
 import Mute from './mute'
 
 
+
 class Browse extends React.Component{
     constructor(props){
         super(props)
@@ -69,8 +70,6 @@ class Browse extends React.Component{
                           
                         </div>
                     <Mute mainVideo={main}/>
-
-                        
                     <VideoIndexContainer videos={this.props.videos} />
 
                 </div >
