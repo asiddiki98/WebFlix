@@ -1,6 +1,7 @@
 import React from 'react'
 import Modal from '../../../../modals/first_modal'
 import { openModal } from '../../../../../actions/modal'
+import {Link } from 'react-router-dom'
 
 
 class ItemOptions extends React.Component{
@@ -12,7 +13,7 @@ class ItemOptions extends React.Component{
     render(){
         return (
             <div className='test-div-2'>
-                <img className="test" src={window.playButtonUrl} alt="" />
+                <Link to={`/video/${this.props.video.id}`}><img className="test" src={window.playButtonUrl} alt="" /></Link>
                 <img className="test-2" alt="svgImg" src="data:image/svg+xml;base64,PHN2ZyB4b
                 Wxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iNDgiIGhlaWdo
                 dD0iNDgiCnZpZXdCb3g9IjAgMCAxNzIgMTcyIgpzdHlsZT0iIGZpbGw6IzAwMDAwMDsiPjxnIHRyYW5zZm9ybT0i

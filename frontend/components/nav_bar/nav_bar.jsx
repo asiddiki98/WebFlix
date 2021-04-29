@@ -18,7 +18,7 @@ class NavBar extends React.Component {
         this.props.login(demo)
     }
     render(){
-
+      
         let display, klass;
         if (this.props.location.pathname === "/") {
             klass = "register-nav-bar"
@@ -28,7 +28,9 @@ class NavBar extends React.Component {
             klass = "login-nav-bar"
         } else if (this.props.location.pathname === "/browse"){
             klass = "logged-in-nav-bar"
-        } 
+        } else {
+            klass = "no-nav-bar"
+        }
         if (this.props.currentUser)  {
             display = (
                 <div className="profile-dropdown">
@@ -39,7 +41,7 @@ class NavBar extends React.Component {
                 </div>
                 
             )
-        } else if ( this.props.match.isExact || this.props.location.pathname === "/signup") {
+        } else if (this.props.match.isExact || this.props.location.pathname === "/signup") {
             display = (
                 <div className="demo-div">
                     <button className="demo" onClick={this.loginDemo}>Demo</button>
@@ -48,7 +50,9 @@ class NavBar extends React.Component {
                     </div>
                 </div>
             )
-        } else {
+        
+        }
+        else {
             display = (
                 <button className="demo" onClick={this.loginDemo}>Demo</button>
             )
