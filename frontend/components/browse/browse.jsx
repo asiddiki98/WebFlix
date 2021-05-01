@@ -1,6 +1,7 @@
 import React from 'react'
 import VideoIndexContainer from './videos_index/videos_index_container';
 import Mute from './mute'
+import { Link } from 'react-router-dom';
 
 
 
@@ -65,11 +66,11 @@ class Browse extends React.Component{
                             <h1 className="main-video-title">{main.title}</h1>
                             <p className="main-video-collection">{main.genres[0].charAt(0).toUpperCase() + main.genres[0].slice(1) + ' Collection'}</p>
                             <p className="main-video-description">{main.description}</p>
-                            <button className="main-video-play">Play</button>
+                            <Link to={`/video/${main.id}`}><button className="main-video-play">Play</button></Link>
                             <button className="main-video-add-to-list">Add to List</button>
                           
                         </div>
-                    <Mute mainVideo={main}/>
+                    <Mute video="main"/>
                     <VideoIndexContainer videos={this.props.videos} />
 
                 </div >
