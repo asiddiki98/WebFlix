@@ -1,9 +1,9 @@
 .modal-child{
-     position: fixed;
+     position: absolute;
     align-self: center;
     width: 90vh;
     background: #131313;;
-   transform: translate(0px, -200px);
+//    transform: translate(0px, -200px);
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.509), 0 8px 16px rgba(0, 0, 0, 0.509);
    border-radius: 10px;
     z-index: 100;
@@ -32,7 +32,7 @@
 
 @media only screen and (max-height: 1150px) {
     .modal-child{
-        transform: translate(0px, -300px);
+        // transform: translate(0px, -300px);
     }
 
 }
@@ -40,13 +40,13 @@
 
 @media only screen and (max-height: 830px) {
     .modal-child{
-        transform: translate(0px, -400px);
+        // transform: translate(0px, -400px);
     }
 
 }
 @media only screen and (max-height: 700px) {
     .modal-child{
-        transform: translate(0px, -500px);
+        // transform: translate(0px, -500px);
     }
 
 }

@@ -289,14 +289,10 @@ video.video-index-item{
     bottom: 5%;
     left: 80%;
 }
-
-// .test-div-2{
-//     background: red;
-//     // margin-top: 110px;
-//     position: absolute;
-//     width:30px;
-//     max-height:30px;
-//     bottom: 5%;
-//     left: 0%;
-//     box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
-// }
+.search-results{
+    display: flex;
+    padding: 50px;
+    flex-wrap: wrap;
+    padding-top: 80px;
+    padding-right: 0px;
+}
