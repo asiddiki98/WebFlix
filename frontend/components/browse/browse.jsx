@@ -2,15 +2,32 @@ import React from 'react'
 import VideoIndexContainer from './videos_index/videos_index_container';
 import Mute from './mute'
 import { Link } from 'react-router-dom';
+import VideoIndexItem from './videos_index/video_index_row/video_index_item/video_index_item.jsx'
+// import SearchBar from '../nav_bar/searchbar'
 
 
 
 class Browse extends React.Component{
     constructor(props){
         super(props)
-
-      
+        this.state = {
+            clicked: false,
+            searchInput: ""
+        }
+        this.handleClick = this.handleClick.bind(this)
     }
+
+    handleChange(field) {
+        return (e) => {
+            this.setState({ [field]: e.currentTarget.value })
+        }
+    }
+
+
+    handleClick() {
+        this.setState({ clicked: !this.state.clicked })
+    }
+
 
     handleMouseIn() {
         return (e) => {
@@ -42,12 +59,22 @@ class Browse extends React.Component{
 
     render (){
         let display;
-        if (this.props.videos[0]){
+        let filteredMovies = this.props.videos.filter((video,idx) => {
+             return video.title.toLowerCase().includes(this.state.searchInput.toLowerCase())
+        })
+        let movies;
+         movies = filteredMovies.map((movie, idx) => {
+            return (
+                <VideoIndexItem  key={`key-${idx}`} video={movie}/>
+            )
+         })
+        if (this.props.videos[0] && this.state.searchInput === ""){
            let main = this.props.videos[this.getRandomVideo(0, (this.props.videos.length -1))];
     
             display = (
             
                 <div className="browse-display-div">
+                    
                     <video 
                     id="main-video"
                     className="main-video" 
@@ -75,15 +102,33 @@ class Browse extends React.Component{
 
                 </div >
             );
-        } else {
+        } else if (this.props.videos[0]){
+            display = <div className="search-results">
+                {movies} 
+            </div>
+        }
+        
+        else {
             display = (
                 <div>
+                    
                     <VideoIndexContainer videos={this.props.videos}  />
                 </div >
             )
         }
+        let klass;
+        if (this.state.clicked) {
+            klass = "open-search-bar"
+        } else {
+            klass = "closed-search-bar"
+        }
+
         return (
             <div className="browse">
+                <div className="search-bar-div">
+                    <button className={`search-button-${klass}`}><img src={window.searchUrl} onClick={this.handleClick} alt="" /></button>
+                    <input className={klass} type="input" onChange={this.handleChange("searchInput")} value={this.state.searchInput} />
+                </div>
              {display}
             </div>
         )

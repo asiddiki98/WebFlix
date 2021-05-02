@@ -324,8 +324,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _videos_index_videos_index_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./videos_index/videos_index_container */ "./frontend/components/browse/videos_index/videos_index_container.js");
 /* harmony import */ var _mute__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./mute */ "./frontend/components/browse/mute.jsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _videos_index_video_index_row_video_index_item_video_index_item_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./videos_index/video_index_row/video_index_item/video_index_item.jsx */ "./frontend/components/browse/videos_index/video_index_row/video_index_item/video_index_item.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -351,6 +354,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+ // import SearchBar from '../nav_bar/searchbar'
 
 var Browse = /*#__PURE__*/function (_React$Component) {
   _inherits(Browse, _React$Component);
@@ -358,12 +362,36 @@ var Browse = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(Browse);
 
   function Browse(props) {
+    var _this;
+
     _classCallCheck(this, Browse);
 
-    return _super.call(this, props);
+    _this = _super.call(this, props);
+    _this.state = {
+      clicked: false,
+      searchInput: ""
+    };
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(Browse, [{
+    key: "handleChange",
+    value: function handleChange(field) {
+      var _this2 = this;
+
+      return function (e) {
+        _this2.setState(_defineProperty({}, field, e.currentTarget.value));
+      };
+    }
+  }, {
+    key: "handleClick",
+    value: function handleClick() {
+      this.setState({
+        clicked: !this.state.clicked
+      });
+    }
+  }, {
     key: "handleMouseIn",
     value: function handleMouseIn() {
       return function (e) {
@@ -394,9 +422,21 @@ var Browse = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var display;
+      var _this3 = this;
 
-      if (this.props.videos[0]) {
+      var display;
+      var filteredMovies = this.props.videos.filter(function (video, idx) {
+        return video.title.toLowerCase().includes(_this3.state.searchInput.toLowerCase());
+      });
+      var movies;
+      movies = filteredMovies.map(function (movie, idx) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_videos_index_video_index_row_video_index_item_video_index_item_jsx__WEBPACK_IMPORTED_MODULE_3__.default, {
+          key: "key-".concat(idx),
+          video: movie
+        });
+      });
+
+      if (this.props.videos[0] && this.state.searchInput === "") {
         var main = this.props.videos[this.getRandomVideo(0, this.props.videos.length - 1)];
         display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "browse-display-div"
@@ -419,7 +459,7 @@ var Browse = /*#__PURE__*/function (_React$Component) {
           className: "main-video-collection"
         }, main.genres[0].charAt(0).toUpperCase() + main.genres[0].slice(1) + ' Collection'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
           className: "main-video-description"
-        }, main.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+        }, main.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
           to: "/video/".concat(main.id)
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
           className: "main-video-play"
@@ -430,15 +470,40 @@ var Browse = /*#__PURE__*/function (_React$Component) {
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_videos_index_videos_index_container__WEBPACK_IMPORTED_MODULE_1__.default, {
           videos: this.props.videos
         }));
+      } else if (this.props.videos[0]) {
+        display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "search-results"
+        }, movies);
       } else {
         display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_videos_index_videos_index_container__WEBPACK_IMPORTED_MODULE_1__.default, {
           videos: this.props.videos
         }));
       }
 
+      var klass;
+
+      if (this.state.clicked) {
+        klass = "open-search-bar";
+      } else {
+        klass = "closed-search-bar";
+      }
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "browse"
-      }, display);
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "search-bar-div"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+        className: "search-button-".concat(klass)
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+        src: window.searchUrl,
+        onClick: this.handleClick,
+        alt: ""
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+        className: klass,
+        type: "input",
+        onChange: this.handleChange("searchInput"),
+        value: this.state.searchInput
+      })), display);
     }
   }]);
 
@@ -1302,6 +1367,8 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var display, klass;
 
       if (this.props.location.pathname === "/") {
@@ -1318,20 +1385,23 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
 
       if (this.props.currentUser) {
         display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-          className: "profile-dropdown"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
-          className: "dropdown-button"
+          className: "left-side-nav-bar"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "profile-dropdown",
+          ref: function ref(div) {
+            return _this2.dropDown = div;
+          }
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
           className: "profile",
           src: window.profileUrl
         }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "caret"
-        }, "\u25BC")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        }, "\u25BC"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "dropdown-content"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
           className: "signout-button",
           onClick: this.props.logout
-        }, "Sign out of Webflix")));
+        }, "Sign out of Webflix"))));
       } else if (this.props.match.isExact || this.props.location.pathname === "/signup") {
         display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "demo-div"

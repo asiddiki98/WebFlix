@@ -1,13 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
+
 class NavBar extends React.Component {
     constructor(props){
         super(props)
 
         this.loginDemo = this.loginDemo.bind(this)
+
         
     }
+
 
     loginDemo(){
         const demo = {
@@ -33,10 +36,15 @@ class NavBar extends React.Component {
         }
         if (this.props.currentUser)  {
             display = (
-                <div className="profile-dropdown">
-                    <button className={"dropdown-button"}><img className="profile" src={window.profileUrl} /> <div className="caret">&#9660;</div></button>
-                    <div className="dropdown-content">
-                        <button className="signout-button" onClick={this.props.logout}>Sign out of Webflix</button>
+                <div className="left-side-nav-bar">
+                  
+                    <div className="profile-dropdown" ref={div => this.dropDown = div}>
+                        <img className="profile" src={window.profileUrl} /> <div className="caret">&#9660;</div>
+                        {/* {!this.state.hidden && <div className="dropdown-contents" onClick={e => e.stopPropagation()}> */}
+                            <div className="dropdown-content">
+                                <button className="signout-button" onClick={this.props.logout}>Sign out of Webflix</button>
+                            </div>
+                        {/* </div>} */}
                     </div>
                 </div>
                 
