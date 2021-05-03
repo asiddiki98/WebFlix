@@ -4,7 +4,6 @@
 #
 #  id          :bigint           not null, primary key
 #  genre       :string           not null
-#  video_id    :integer          not null
 #  description :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null

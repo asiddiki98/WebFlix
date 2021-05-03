@@ -7,8 +7,6 @@
 #  description :string           not null
 #  director    :string           not null
 #  year        :integer          not null
-#  duration    :integer          not null
-#  genre_id    :integer          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
@@ -22,6 +20,15 @@ class Video < ApplicationRecord
     has_many :genres,
     through: :genre_joins,
     source: :genre 
+
+    has_many :lists,
+    primary_key: :id,
+    foreign_key: :video_id,
+    class_name: :List
+
+    has_many :users,
+    through: :lists,
+    source: :user
 
     has_one_attached :video
 

@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     get '/users', to: 'users#check_email'
     resources :videos, only: [:index, :show]
     resources :genres, only: [:index, :show]
+    resources :lists, only: [:index, :create, :destroy]
     resource :session, only: [:create, :destroy]
   end
 end
