@@ -8,6 +8,9 @@
 #                 api_video GET    /api/videos/:id(.:format)                                                                api/videos#show {:format=>:json}
 #                api_genres GET    /api/genres(.:format)                                                                    api/genres#index {:format=>:json}
 #                 api_genre GET    /api/genres/:id(.:format)                                                                api/genres#show {:format=>:json}
+#                 api_lists GET    /api/lists(.:format)                                                                     api/lists#index {:format=>:json}
+#                           POST   /api/lists(.:format)                                                                     api/lists#create {:format=>:json}
+#                  api_list DELETE /api/lists/:id(.:format)                                                                 api/lists#destroy {:format=>:json}
 #               api_session DELETE /api/session(.:format)                                                                   api/sessions#destroy {:format=>:json}
 #                           POST   /api/session(.:format)                                                                   api/sessions#create {:format=>:json}
 
