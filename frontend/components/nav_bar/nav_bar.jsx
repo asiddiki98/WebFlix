@@ -29,7 +29,7 @@ class NavBar extends React.Component {
             klass = "signup-nav-bar"
         } else if (this.props.location.pathname === "/login") {
             klass = "login-nav-bar"
-        } else if (this.props.location.pathname === "/browse"){
+        } else if (this.props.location.pathname === "/browse" || this.props.location.pathname === "/my-list"){
             klass = "logged-in-nav-bar"
         } else {
             klass = "no-nav-bar"
@@ -69,7 +69,13 @@ class NavBar extends React.Component {
        
         return (
             <header className={klass}>
+                <div className="leftnav">
                 <Link to="/"><img className={klass} src={window.logoUrl} /></Link> 
+                <div className="links">
+                { this.props.location.pathname === "/browse" || this.props.location.pathname === "/my-list" ? <Link className="home-link" to="/browse">Home</Link> : null }
+                { this.props.location.pathname === "/browse" || this.props.location.pathname === "/my-list" ? <Link className="list-link"to="/my-list">My List</Link> : null }
+                    </div>
+                </div>
                 { display }
             </header>
         )

@@ -47,6 +47,7 @@ class Browse extends React.Component{
 
     componentDidMount(){
         this.props.fetchVideos()
+        this.props.fetchList()
     }
 
     getRandomVideo(min, max){
@@ -62,14 +63,22 @@ class Browse extends React.Component{
         let filteredMovies = this.props.videos.filter((video,idx) => {
              return video.title.toLowerCase().includes(this.state.searchInput.toLowerCase())
         })
+
         let movies;
          movies = filteredMovies.map((movie, idx) => {
             return (
                 <VideoIndexItem  key={`key-${idx}`} video={movie}/>
             )
          })
-        if (this.props.videos[0] && this.state.searchInput === ""){
-           let main = this.props.videos[this.getRandomVideo(0, (this.props.videos.length -1))];
+
+         let list;
+        list = this.props.list.map((movie, idx) => {
+            return (
+                <VideoIndexItem key={`key-${idx}`} video={movie} />
+            )
+        })
+        if (this.props.videos[0] && this.state.searchInput === "" && this.props.location.pathname === "/browse"){
+           let main = this.props.videos[this.props.videos.length-1];
     
             display = (
             
@@ -102,17 +111,17 @@ class Browse extends React.Component{
 
                 </div >
             );
-        } else if (this.props.videos[0]){
+        } else if (this.props.videos[0] && this.state.searchInput !== ""){
             display = <div className="search-results">
                 {movies} 
             </div>
         }
         
-        else {
+        else if (this.props.location.pathname === "/my-list"){
+            debugger
             display = (
-                <div>
-                    
-                    <VideoIndexContainer videos={this.props.videos}  />
+                <div className="search-results">
+                    {list}
                 </div >
             )
         }

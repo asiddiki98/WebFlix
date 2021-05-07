@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import {  Route, Switch } from 'react-router-dom';
 import SignupContainer from './session/signup_container';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import LoginContainer from './session/login_container';
@@ -20,6 +20,7 @@ export default () => {
                 <Modal />
                 <Switch>
                     <ProtectedRoute path="/browse" component={BrowseContainer} />
+                    <ProtectedRoute path="/my-list" component={BrowseContainer} />
                     <ProtectedRoute path="/video/:videoId" component={VideoShow} />
                     <AuthRoute exact path="/" component={RegisterContainer}/> 
                     <AuthRoute path="/signup" component={SignupContainer}/> 
