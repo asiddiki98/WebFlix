@@ -112,16 +112,22 @@
 
 .sound-div{
     position: absolute;
-    top: 31%;
+    top: 24%;
     right: 5%;
 }
 
 .sound{
     position: static;
+    color: white;
+    height: 64px;
+    width: 64px;
 }
 
 .mute{
     position: static;
+       color: white;
+    height: 64px;
+    width: 64px;
 }
 
 
@@ -264,10 +270,11 @@ video.video-index-item{
 .test-2{
     display: none;
     position: absolute;
-    width:30px;
-    max-height:30px;
-    bottom: 5%;
+    width: 25px;
+    max-height: 27px;
+    bottom: 6%;
     left: 15%;
+    cursor: pointer;
 }
 
 
@@ -284,10 +291,10 @@ video.video-index-item{
      display: none;
     // margin-top: 110px;
     position: absolute;
-    width: 50px;
-    max-height:30px;
+    width: 30px;
     bottom: 5%;
     left: 80%;
+    transform: rotate(180deg);
 }
 .search-results{
     display: flex;

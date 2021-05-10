@@ -34,9 +34,9 @@ class Mute extends React.Component{
             klass = "modal-sound"
         }
         if (this.state.sound){  
-            display = <button className="sound" onClick={this.handleSound} src={window.soundUrl}>unmute</button>
+            display = <img className="sound" onClick={this.handleSound} src={window.muteUrl}></img>
         } else {
-            display =  <button className="mute" onClick={this.handleSound} src={window.muteUrl}> mute</button> 
+            display =  <img className="mute" onClick={this.handleSound} src={window.soundUrl}></img> 
         }
         return (
             <div className={klass}>

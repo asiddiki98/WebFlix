@@ -27,6 +27,7 @@ class VideoIndexItem extends React.Component{
                     
                     <video 
                     className="video-index-item"  
+                    id={`video-${this.props.video.id}`}
                     poster={this.props.video.photoUrl} 
                     src={this.props.video.videoUrl} 
                     onMouseOver={this.handleMouseIn()}

@@ -7,6 +7,7 @@ import RegisterContainer from './register/register_container'
 import Footer from './footer'
 import { AuthRoute, ProtectedRoute } from '../utils/route_utils'
 import BrowseContainer from './browse/browse_container'
+import myListContainer from './myList/list'
 import Modal from './modals/first_modal'
 import VideoShow from './show/show_video'
 
@@ -20,7 +21,7 @@ export default () => {
                 <Modal />
                 <Switch>
                     <ProtectedRoute path="/browse" component={BrowseContainer} />
-                    <ProtectedRoute path="/my-list" component={BrowseContainer} />
+                    <ProtectedRoute path="/my-list" component={myListContainer} />
                     <ProtectedRoute path="/video/:videoId" component={VideoShow} />
                     <AuthRoute exact path="/" component={RegisterContainer}/> 
                     <AuthRoute path="/signup" component={SignupContainer}/> 

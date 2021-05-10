@@ -3,27 +3,33 @@ class Api::ListsController < ApplicationController
 
     def index 
         @lists = current_user.listed_movies
- 
-        render :index
+        if @lists
+            render :index
+        else
+            render json:["failure"], status: 422
+        end
+        
     end 
 
     def create 
         @list = List.new(list_params)
 
         if @list.save 
+            @lists = @lists = current_user.listed_movies
             render :index, status: 200
         else 
-            render :index, status: 422
+            render json: {}, status: 422
         end 
     end 
 
     def destroy 
         @list = List.find_by(video_id: list_params[:video_id],  user_id: list_params[:user_id])
 
-        if list.destroy(@list.id)
+        if List.destroy(@list.id)
+            @lists = @lists = current_user.listed_movies
             render :index, status: 200
         else 
-            render :index, status: 422
+            render json: {}, status: 422
         end 
     end 
 

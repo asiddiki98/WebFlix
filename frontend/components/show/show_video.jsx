@@ -28,7 +28,7 @@ class VideoShow extends React.Component{
         }
         return (
             <div className="show-div">
-                <Link to='/browse'> <button className="back-button">{`<-`}</button></Link>
+                <Link to='/browse'> <img className="back-button" src={window.downUrl}/></Link>
                 {display}
             </div>
         )

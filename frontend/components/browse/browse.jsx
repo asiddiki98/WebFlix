@@ -29,33 +29,27 @@ class Browse extends React.Component{
     }
 
 
-    handleMouseIn() {
-        return (e) => {
-
-            e.target.play()
-
-        }
-    }
-
-    handleMouseOut() {
-        return (e) => {
-            e.target.load()
-            e.target.pause();
-        }
-        
-    }
-
     componentDidMount(){
         this.props.fetchVideos()
-        this.props.fetchList()
+        this.props.fetchList() 
     }
-
-    getRandomVideo(min, max){
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        let ans =  Math.floor(Math.random() * (max - min + 1) + min);
-
-        return ans
+    delete(main) {
+        let list = {
+            video_id: main.id,
+            user_id: this.props.currentUser.id
+        }
+        // this.props.addToList(list)
+        this.props.deleteFromList(list)
+        // this.props.fetchList().then( )
+    }
+    add(main) {
+        let list = {
+            video_id: main.id,
+            user_id: this.props.currentUser.id
+        }
+        this.props.addToList(list)
+        // this.props.deleteFromList(list)
+        // this.props.fetchList().then( )
     }
 
     render (){
@@ -71,12 +65,6 @@ class Browse extends React.Component{
             )
          })
 
-         let list;
-        list = this.props.list.map((movie, idx) => {
-            return (
-                <VideoIndexItem key={`key-${idx}`} video={movie} />
-            )
-        })
         if (this.props.videos[0] && this.state.searchInput === "" && this.props.location.pathname === "/browse"){
            let main = this.props.videos[this.props.videos.length-1];
     
@@ -103,7 +91,7 @@ class Browse extends React.Component{
                             <p className="main-video-collection">{main.genres[0].charAt(0).toUpperCase() + main.genres[0].slice(1) + ' Collection'}</p>
                             <p className="main-video-description">{main.description}</p>
                             <Link to={`/video/${main.id}`}><button className="main-video-play">Play</button></Link>
-                            <button className="main-video-add-to-list">Add to List</button>
+                        {this.props.list.includes(String(main.id)) ? <button onClick={() => this.delete(main)} className="main-video-add-to-list"> &#x2714; My List</button> : <button onClick={() => this.add(main)} className="main-video-add-to-list">Add to List</button>}
                           
                         </div>
                     <Mute video="main"/>
@@ -113,17 +101,11 @@ class Browse extends React.Component{
             );
         } else if (this.props.videos[0] && this.state.searchInput !== ""){
             display = <div className="search-results">
-                {movies} 
+                <h1 className="list-header">Explore titles related to: {`${this.state.searchInput}`}</h1>
+                <div className="list-results">
+                    {movies}
+                </div>
             </div>
-        }
-        
-        else if (this.props.location.pathname === "/my-list"){
-            debugger
-            display = (
-                <div className="search-results">
-                    {list}
-                </div >
-            )
         }
         let klass;
         if (this.state.clicked) {

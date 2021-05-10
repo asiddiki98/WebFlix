@@ -95,22 +95,42 @@
 .video {
     .options{
         position: absolute;
-        bottom: 20%;
-        left: 10px;
+        bottom:  130px;
+            left: 26px;
     }
     .play-button{
     width:60px;
     transform: translateY(-100%) ;
+
     }
     .list-button{
-    width: 58px;
-    transform: translateY(-100%) ;
+      width: 52px;
+    transform: translateY(-121%);
+    padding-left: 5px;
     color: white;
+    cursor: pointer;
     }
 }
 .modal-sound{
     position: absolute;
-    top: 67%;
-    right: 5%;
+    right: 20px;
+    bottom: 200px;
+    transition: 0.3s;
+    .sound{
+        position: static;
+        color: white;
+        height: 50px;
+        width: 50px;
+        transition: 0.3s;
+         cursor: pointer;
+    }
+    .mute{
+        position: static;
+        color: white;
+        height: 50px;
+        width: 50px; 
+        transition: 0.3s;
+         cursor: pointer;
+    }
 }
 

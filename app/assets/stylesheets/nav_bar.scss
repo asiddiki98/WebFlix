@@ -169,8 +169,7 @@ img.logged-in-nav-bar{
     // display: none;
     color: white;
     transition: 0.3s;
-    transform: rotate(180deg) translate(-10px,15px) scaleX(-1);
-    
+    transform: translate(10px,13px);
 }
 
 .dropdown-button {
@@ -215,11 +214,28 @@ img.logged-in-nav-bar{
 
 
 .profile-dropdown:hover .dropdown-content {display: block;}
-.profile-dropdown:hover .caret {transform: translate(10px,13px);}
+.profile-dropdown:hover .caret {transform: rotate(180deg) translate(-10px,10px) scaleX(-1);}
 
 .signout-button:hover{
     background:rgb(0, 0, 0);
     color: rgba(255, 0, 0, 0.815);
+}
+.github-button{
+    position: relative;
+    bottom: 100%;
+    background: rgba(0, 0, 0, 0.726);
+    color: white;
+    width: 150px;
+    border: none;
+    height: 50px;
+    // margin-top: 4em;
+    margin-right: 20px;
+    transition: 0.3s;
+    transform: translate(-27px);
+    &:hover{
+            background:rgb(0, 0, 0);
+    color: rgba(255, 0, 0, 0.815);
+    }
 }
 
 .no-nav-bar{

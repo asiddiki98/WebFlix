@@ -1,4 +1,4 @@
-json.set! "list" do  
+# json.set! "list" do  
     @lists.each do |video|
         json.set! video.id do
             json.partial! 'api/videos/video', video: video
@@ -7,4 +7,4 @@ json.set! "list" do
 
         end 
     end 
-end 
+# end 

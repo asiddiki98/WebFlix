@@ -42,7 +42,11 @@ class NavBar extends React.Component {
                         <img className="profile" src={window.profileUrl} /> <div className="caret">&#9660;</div>
                         {/* {!this.state.hidden && <div className="dropdown-contents" onClick={e => e.stopPropagation()}> */}
                             <div className="dropdown-content">
-                                <button className="signout-button" onClick={this.props.logout}>Sign out of Webflix</button>
+                            <a href="https://github.com/asiddiki98" target="_blank"><button className="signout-button"> <i className="fab fa-github"> </i> Github</button></a>
+                            <a href="https://angel.co/u/azim-siddiki" target="_blank"><button className="github-button">  <i className="fab fa-angellist"></i> Angel List</button></a>
+                            <a href="https://www.linkedin.com/in/azim-siddiki-3b505b207/" target="_blank"><button className="github-button"> <i className="fab fa-linkedin-in"></i> Linked In</button></a>
+                                <button  className="github-button" onClick={this.props.logout}>Sign out </button>
+
                             </div>
                         {/* </div>} */}
                     </div>
@@ -73,7 +77,7 @@ class NavBar extends React.Component {
                 <Link to="/"><img className={klass} src={window.logoUrl} /></Link> 
                 <div className="links">
                 { this.props.location.pathname === "/browse" || this.props.location.pathname === "/my-list" ? <Link className="home-link" to="/browse">Home</Link> : null }
-                { this.props.location.pathname === "/browse" || this.props.location.pathname === "/my-list" ? <Link className="list-link"to="/my-list">My List</Link> : null }
+                        {this.props.location.pathname === "/browse" || this.props.location.pathname === "/my-list" ? <Link  className="list-link" to="/my-list">My List</Link> : null }
                     </div>
                 </div>
                 { display }

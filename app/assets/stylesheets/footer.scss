@@ -26,7 +26,6 @@ footer.login-footer{
     border-top: 10px solid rgba(128, 128, 128, 0.178);
     background-color: rgba(0, 0, 0, 0.842);
     height: 15%;
-    position: absolute;
     min-width: 100%;
     bottom: 0;
 }
@@ -61,6 +60,52 @@ h1.github{
     color: rgba(255, 0, 0, 0.815);
     
 }
+#angellist{
+    color: white;
+    padding-top: 10px;
+    transition: 0.3s;
+    padding-left: 10px;
+    // padding-left: 80px;
+}
+
+.angellist{
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+    &:hover{
+        color: rgba(255, 0, 0, 0.815);
+    }
+}
+
+
+#angellist:hover{
+    color: rgba(255, 0, 0, 0.815);
+    
+}
+#linkedin{
+    color: white;
+    padding-top: 9px;
+    transition: 0.3s;
+    padding-left: 10px;
+    transform: translateY(-1px);
+    // padding-left: 80px;
+}
+
+.linkedin{
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+    &:hover{
+        color: rgba(255, 0, 0, 0.815);
+    }
+}
+
+
+#linkedin:hover{
+    color: rgba(255, 0, 0, 0.815);
+    
+}
+
 
 .loggedin-footer{
     border-top: 1px solid rgba(128, 128, 128, 0.178);
