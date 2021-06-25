@@ -2,7 +2,7 @@ class Api::ListsController < ApplicationController
     before_action :ensure_logged_in
 
     def index 
-        @lists = current_user.listed_movies
+        @lists = current_user.listed_movies.with_attached_photo.with_attached_video.includes(:genres).all
         if @lists
             render :index
         else
@@ -15,7 +15,7 @@ class Api::ListsController < ApplicationController
         @list = List.new(list_params)
 
         if @list.save 
-            @lists = @lists = current_user.listed_movies
+            @lists = @lists = current_user.listed_movies.with_attached_photo.with_attached_video.includes(:genres).all
             render :index, status: 200
         else 
             render json: {}, status: 422
@@ -26,7 +26,7 @@ class Api::ListsController < ApplicationController
         @list = List.find_by(video_id: list_params[:video_id],  user_id: list_params[:user_id])
 
         if List.destroy(@list.id)
-            @lists = @lists = current_user.listed_movies
+            @lists = @lists = current_user.listed_movies.with_attached_photo.with_attached_video.includes(:genres).all
             render :index, status: 200
         else 
             render json: {}, status: 422
