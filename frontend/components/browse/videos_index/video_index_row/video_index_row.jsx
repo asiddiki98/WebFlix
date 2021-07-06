@@ -24,7 +24,6 @@ class VideoIndexRow extends React.Component{
             next.scrollLeft += 1860
         } else {
             next.scrollLeft += number
-            console.log(next.scrollLeft)
         }
 
     }
