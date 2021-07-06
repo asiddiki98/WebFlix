@@ -38,7 +38,7 @@ footer{
     color: white;
     padding-top: 10px;
     transition: 0.3s;
-    // padding-left: 80px;
+    transform: scale(2) translateX(-5px)
 }
 h1.github{
     padding-top: 30px;
@@ -66,7 +66,7 @@ h1.github{
     padding-top: 10px;
     transition: 0.3s;
     padding-left: 10px;
-    // padding-left: 80px;
+    transform: scale(2) translateX(-2px);
 }
 
 .angellist{
@@ -87,8 +87,8 @@ h1.github{
     color: white;
     padding-top: 9px;
     transition: 0.3s;
-    padding-left: 10px;
-    transform: translateY(-1px);
+    padding-left: 14px;
+    transform: translateY(-1px) scale(2);
     // padding-left: 80px;
 }
 
@@ -118,4 +118,7 @@ h1.github{
 
 .no-footer{
     display: none;
+}
+.profile-link{
+    text-decoration: none;
 }

@@ -464,6 +464,7 @@ var Browse = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "add",
     value: function add(main) {
+      debugger;
       var list = {
         video_id: main.id,
         user_id: this.props.currentUser.id
@@ -478,7 +479,7 @@ var Browse = /*#__PURE__*/function (_React$Component) {
 
       var display;
       var filteredMovies = this.props.videos.filter(function (video, idx) {
-        return video.title.toLowerCase().includes(_this3.state.searchInput.toLowerCase());
+        return video.title.toLowerCase().includes(_this3.state.searchInput.toLowerCase()) || video.genres.join(" ").toLowerCase().includes(_this3.state.searchInput.toLowerCase());
       });
       var movies;
       movies = filteredMovies.map(function (movie, idx) {
@@ -804,9 +805,8 @@ var ItemOptions = /*#__PURE__*/function (_React$Component) {
       var list = {
         video_id: this.props.video.id,
         user_id: this.props.currentUser.id
-      }; // this.props.addToList(list)
-
-      this.props.deleteFromList(list); // this.props.fetchList().then( )
+      };
+      this.props.deleteFromList(list);
     }
   }, {
     key: "add",
@@ -815,8 +815,7 @@ var ItemOptions = /*#__PURE__*/function (_React$Component) {
         video_id: this.props.video.id,
         user_id: this.props.currentUser.id
       };
-      this.props.addToList(list); // this.props.deleteFromList(list)
-      // this.props.fetchList().then( )
+      this.props.addToList(list);
     }
   }, {
     key: "render",
@@ -944,6 +943,11 @@ var VideoIndexItem = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(VideoIndexItem, [{
+    key: "openModal",
+    value: function openModal() {
+      this.props.littleModal(this.props.video);
+    }
+  }, {
     key: "handleMouseIn",
     value: function handleMouseIn() {
       return function (e) {
@@ -961,10 +965,15 @@ var VideoIndexItem = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this = this;
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "video-index-item-option-div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: "video-index-item"
+        className: "video-index-item",
+        onClick: function onClick() {
+          return _this.openModal();
+        }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("video", {
         className: "video-index-item",
         id: "video-".concat(this.props.video.id),
@@ -1059,7 +1068,19 @@ var VideoIndexRow = /*#__PURE__*/function (_React$Component) {
     key: "handleClick",
     value: function handleClick(number) {
       var next = document.getElementById("".concat(this.props.genreName, "-index-row"));
-      next.scrollLeft += number;
+
+      if (number == 600 && next.scrollLeft == 1570 && (this.props.genreName == 'horror' || this.props.genreName == 'thriller')) {
+        next.scrollLeft -= 1570;
+      } else if (number == 600 && next.scrollLeft == 1860 && !(this.props.genreName == 'horror' || this.props.genreName == 'thriller')) {
+        next.scrollLeft -= 1860;
+      } else if (number == -600 && next.scrollLeft == 0 && (this.props.genreName == 'horror' || this.props.genreName == 'thriller')) {
+        next.scrollLeft += 1570;
+      } else if (number == -600 && next.scrollLeft == 0 && !(this.props.genreName == 'horror' || this.props.genreName == 'thriller')) {
+        next.scrollLeft += 1860;
+      } else {
+        next.scrollLeft += number;
+        console.log(next.scrollLeft);
+      }
     }
   }, {
     key: "render",
@@ -1076,12 +1097,12 @@ var VideoIndexRow = /*#__PURE__*/function (_React$Component) {
         className: "video-index-row-div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
         className: "video-index-row"
-      }, this.props.genreName.charAt(0).toUpperCase() + this.props.genreName.slice(1)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+      }, "".concat(this.props.genreName.charAt(0).toUpperCase() + this.props.genreName.slice(1))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
         className: "previous",
         onClick: function onClick() {
           return _this2.handleClick(-600);
         }
-      }, "<"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      }, "\u276F"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "video-index-row",
         id: "".concat(this.props.genreName, "-index-row")
       }, videos), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
@@ -1089,7 +1110,7 @@ var VideoIndexRow = /*#__PURE__*/function (_React$Component) {
         onClick: function onClick() {
           return _this2.handleClick(600);
         }
-      }, ">"));
+      }, "\u276F"));
     }
   }]);
 
@@ -1188,6 +1209,9 @@ var VideoIndex = /*#__PURE__*/function (_React$Component) {
         }),
         thriller: this.props.videos.filter(function (el) {
           return el.genres.includes("Thriller");
+        }),
+        drama: this.props.videos.filter(function (el) {
+          return el.genres.includes("Drama");
         })
       };
       var videoRows = Object.keys(genres).map(function (genre, idx) {
@@ -1308,30 +1332,34 @@ var Footer = /*#__PURE__*/function (_React$Component) {
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("footer", {
         className: klass
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+        className: "profile-link",
+        href: "https://asiddiki98.github.io/azim_siddiki/#",
+        target: "_blank"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
-        className: "github "
-      }, "CREATOR CREDENTIALS"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
-        id: "github",
-        className: "fab fa-github"
-      }, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+        className: "github"
+      }, "CREATED BY AZIM SIDDIKI")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
         className: "github",
         target: "_blank",
         href: "https://github.com/asiddiki98"
-      }, " Github"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
-        id: "angellist",
-        className: "fab fa-angellist"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+      }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
+        id: "github",
+        className: "fab fa-github"
+      }, " "), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
         className: "angellist",
         target: "_blank",
         href: "https://angel.co/u/azim-siddiki"
-      }, " Angel List"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
-        id: "linkedin",
-        className: "fab fa-linkedin-in"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+      }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
+        id: "angellist",
+        className: "fab fa-angellist"
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
         className: "linkedin",
         target: "_blank",
         href: "https://www.linkedin.com/in/azim-siddiki-3b505b207/"
-      }, " Linked In"));
+      }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
+        id: "linkedin",
+        className: "fab fa-linkedin-in"
+      })));
     }
   }]);
 
@@ -1410,9 +1438,8 @@ var Modal = /*#__PURE__*/function (_React$Component) {
       var list = {
         video_id: this.props.modal.id,
         user_id: this.props.currentUser.id
-      }; // this.props.addToList(list)
-
-      this.props.deleteFromList(list); // this.props.fetchList().then( )
+      };
+      this.props.deleteFromList(list);
     }
   }, {
     key: "add",
@@ -1421,8 +1448,7 @@ var Modal = /*#__PURE__*/function (_React$Component) {
         video_id: this.props.modal.id,
         user_id: this.props.currentUser.id
       };
-      this.props.addToList(list); // this.props.deleteFromList(list)
-      // this.props.fetchList().then( )
+      this.props.addToList(list);
     }
   }, {
     key: "render",
@@ -2016,7 +2042,7 @@ var Register = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
         type: "text",
         value: this.state.email,
-        placeholder: " Email Address",
+        placeholder: "Email Address",
         onChange: this.handleInput("email")
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
         onClick: this.handleSubmit
@@ -2198,13 +2224,13 @@ var Login = /*#__PURE__*/function (_React$Component) {
         className: "signin-email",
         type: "email",
         value: this.state.email,
-        placeholder: " Email",
+        placeholder: "Email",
         onChange: this.handleInput("email")
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
         className: "signin-password",
         type: "password",
         value: this.state.password,
-        placeholder: " Password",
+        placeholder: "Password",
         onChange: this.handleInput("password")
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
         className: "signin-button",
@@ -2380,13 +2406,13 @@ var Signup = /*#__PURE__*/function (_React$Component) {
         className: "signup-email",
         type: "text",
         value: this.state.email,
-        placeholder: " Email",
+        placeholder: "Email",
         onChange: this.handleInput("email")
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
         className: "signup-password",
         type: "password",
         value: this.state.password,
-        placeholder: " Add a Password",
+        placeholder: "Add a Password",
         onChange: this.handleInput("password")
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), this.renderErrors(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
         className: "signup-button",
@@ -2804,7 +2830,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function () {
   var preloadedState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  return (0,redux__WEBPACK_IMPORTED_MODULE_3__.createStore)(_reducers_root__WEBPACK_IMPORTED_MODULE_1__.default, preloadedState, (0,redux__WEBPACK_IMPORTED_MODULE_3__.applyMiddleware)(redux_thunk__WEBPACK_IMPORTED_MODULE_0__.default));
+  return (0,redux__WEBPACK_IMPORTED_MODULE_3__.createStore)(_reducers_root__WEBPACK_IMPORTED_MODULE_1__.default, preloadedState, (0,redux__WEBPACK_IMPORTED_MODULE_3__.applyMiddleware)(redux_thunk__WEBPACK_IMPORTED_MODULE_0__.default, (redux_logger__WEBPACK_IMPORTED_MODULE_2___default())));
 });
 
 /***/ }),

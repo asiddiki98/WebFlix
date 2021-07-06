@@ -12,22 +12,20 @@ class Modal extends React.Component {
     }
 
     delete() {
+       
         let list = {
             video_id: this.props.modal.id,
             user_id: this.props.currentUser.id
         }
-        // this.props.addToList(list)
         this.props.deleteFromList(list)
-        // this.props.fetchList().then( )
     }
     add() {
+     
         let list = {
             video_id: this.props.modal.id,
             user_id: this.props.currentUser.id
         }
         this.props.addToList(list)
-        // this.props.deleteFromList(list)
-        // this.props.fetchList().then( )
     }
 
 

@@ -49,11 +49,11 @@ class Signup extends React.Component {
                     <h2 className={"signup-h2"}>We hate paperwork, too.</h2>
                     <br/>
 
-                    <input className={"signup-email"} type="text" value={this.state.email} placeholder={" Email"} onChange={this.handleInput("email")}/>
+                    <input className={"signup-email"} type="text" value={this.state.email} placeholder={"Email"} onChange={this.handleInput("email")}/>
 
                     <br/>
 
-                    <input className={"signup-password"} type="password" value={this.state.password} placeholder={" Add a Password"} onChange={this.handleInput("password")}/>
+                    <input className={"signup-password"} type="password" value={this.state.password} placeholder={"Add a Password"} onChange={this.handleInput("password")}/>
 
                     <br/>
                         {this.renderErrors()}

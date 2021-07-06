@@ -17,13 +17,13 @@ class Footer extends React.Component {
         }
         return (
             <footer className={klass}> 
-                <h1 className="github ">CREATOR CREDENTIALS</h1>
-                <i id="github" className="fab fa-github"> </i> 
-                <a className="github" target="_blank" href="https://github.com/asiddiki98"> Github</a>
-                <i id="angellist"  className="fab fa-angellist"></i>
-                <a className="angellist" target="_blank" href="https://angel.co/u/azim-siddiki"> Angel List</a>
-                <i id="linkedin" className="fab fa-linkedin-in"></i>
-                <a className="linkedin" target="_blank" href="https://www.linkedin.com/in/azim-siddiki-3b505b207/"> Linked In</a>
+                <a className="profile-link" href="https://asiddiki98.github.io/azim_siddiki/#"  target="_blank"><h1 className="github">CREATED BY AZIM SIDDIKI</h1></a>
+                
+                <a className="github" target="_blank" href="https://github.com/asiddiki98"> <i id="github" className="fab fa-github"> </i> </a>
+                
+                <a className="angellist" target="_blank" href="https://angel.co/u/azim-siddiki"> <i id="angellist" className="fab fa-angellist"></i></a>
+                
+                <a className="linkedin" target="_blank" href="https://www.linkedin.com/in/azim-siddiki-3b505b207/"> <i id="linkedin" className="fab fa-linkedin-in"></i></a>
             </footer>
         )
     }

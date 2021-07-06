@@ -47,9 +47,9 @@ class Login extends React.Component {
                     
                     <div className="form-inner-div">
                         <br/>
-                        <input className="signin-email" type="email" value={this.state.email} placeholder={" Email"} onChange={this.handleInput("email")} />
+                        <input className="signin-email" type="email" value={this.state.email} placeholder={"Email"} onChange={this.handleInput("email")} />
                         <br/>
-                        <input className="signin-password" type="password" value={this.state.password} placeholder={" Password"} onChange={this.handleInput("password")} />
+                        <input className="signin-password" type="password" value={this.state.password} placeholder={"Password"} onChange={this.handleInput("password")} />
                         <br/>
                         <button className="signin-button" onClick={this.handleSubmit}>Sign In</button>
                         

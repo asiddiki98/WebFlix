@@ -6,6 +6,10 @@ import { connect } from 'react-redux'
 
 class VideoIndexItem extends React.Component{
 
+    openModal() {
+        this.props.littleModal(this.props.video)
+    }
+
     handleMouseIn(){
         return (e) => {
     
@@ -23,7 +27,7 @@ class VideoIndexItem extends React.Component{
     render(){
         return(
             <div className='video-index-item-option-div'>
-                <div className="video-index-item">
+                <div className="video-index-item" onClick={() => this.openModal()}>
                     
                     <video 
                     className="video-index-item"  

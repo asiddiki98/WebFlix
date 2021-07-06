@@ -30,6 +30,7 @@ class Browse extends React.Component{
 
 
     componentDidMount(){
+       
         this.props.fetchVideos()
         this.props.fetchList() 
     }
@@ -43,6 +44,7 @@ class Browse extends React.Component{
         // this.props.fetchList().then( )
     }
     add(main) {
+        debugger
         let list = {
             video_id: main.id,
             user_id: this.props.currentUser.id
@@ -55,7 +57,7 @@ class Browse extends React.Component{
     render (){
         let display;
         let filteredMovies = this.props.videos.filter((video,idx) => {
-             return video.title.toLowerCase().includes(this.state.searchInput.toLowerCase())
+            return video.title.toLowerCase().includes(this.state.searchInput.toLowerCase()) || video.genres.join(" ").toLowerCase().includes(this.state.searchInput.toLowerCase())
         })
 
         let movies;

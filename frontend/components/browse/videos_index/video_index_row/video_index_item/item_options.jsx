@@ -15,18 +15,16 @@ class ItemOptions extends React.Component{
             video_id: this.props.video.id,
             user_id: this.props.currentUser.id
         }
-        // this.props.addToList(list)
+    
         this.props.deleteFromList(list)
-        // this.props.fetchList().then( )
     }
     add(){
         let list = {
             video_id: this.props.video.id,
             user_id: this.props.currentUser.id
         }
+     
         this.props.addToList(list)
-        // this.props.deleteFromList(list)
-        // this.props.fetchList().then( )
     }
     
     

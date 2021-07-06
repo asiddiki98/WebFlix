@@ -13,7 +13,8 @@ class VideoIndex extends React.Component{
         const genres = {
             horror: this.props.videos.filter(el => el.genres.includes("Horror")),
             comedy: this.props.videos.filter(el => el.genres.includes("Comedy")),
-            thriller: this.props.videos.filter(el => el.genres.includes("Thriller"))
+            thriller: this.props.videos.filter(el => el.genres.includes("Thriller")),
+            drama: this.props.videos.filter(el => el.genres.includes("Drama"))
         }
 
         const videoRows = Object.keys(genres).map((genre, idx) => {

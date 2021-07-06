@@ -26,6 +26,10 @@ div.signup-div{
     font-size: 20px;
     height: 60px;
     width: 400px;
+    padding-left: 10px; 
+    &:focus{
+        outline: none;
+    }
 }
 
 .signup-password{
@@ -33,6 +37,10 @@ div.signup-div{
     height: 60px;
     width: 400px;
     margin-top: 1em;
+    padding-left: 10px; 
+    &:focus{
+        outline: none;
+    }
 }
 .signup-button{
     font-size: 23px;

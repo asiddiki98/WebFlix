@@ -42,6 +42,10 @@ form > h2.signin-h2{
     background-color: #555555;
     margin-top: 1em;
     margin-bottom: 1em ;
+    padding: 10px; 
+    &:focus{
+        outline: none;
+    }
 }
 .signin-password{
 
@@ -53,6 +57,10 @@ form > h2.signin-h2{
     border-radius: 4px;
     background-color: #555555;
     margin-bottom: 2em ;
+    padding: 10px; 
+    &:focus{
+        outline: none;
+    }
 }
 .signin-button{
     font-size: 23px;

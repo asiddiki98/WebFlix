@@ -11,8 +11,22 @@ class VideoIndexRow extends React.Component{
     }
 
     handleClick(number){
+        
         let next = document.getElementById(`${this.props.genreName}-index-row`);
-        next.scrollLeft += number
+        
+        if (number == 600 && next.scrollLeft == 1570 && (this.props.genreName == 'horror' || this.props.genreName == 'thriller')){
+                next.scrollLeft -= 1570
+        } else if (number == 600 && next.scrollLeft == 1860 && !(this.props.genreName == 'horror' || this.props.genreName == 'thriller')){
+            next.scrollLeft -= 1860
+        } else if (number == -600 && next.scrollLeft == 0 && (this.props.genreName == 'horror' || this.props.genreName == 'thriller')){
+            next.scrollLeft += 1570
+        } else if (number == -600 && next.scrollLeft == 0 && !(this.props.genreName == 'horror' || this.props.genreName == 'thriller')){
+            next.scrollLeft += 1860
+        } else {
+            next.scrollLeft += number
+            console.log(next.scrollLeft)
+        }
+
     }
 
     render(){
@@ -25,12 +39,12 @@ class VideoIndexRow extends React.Component{
         })
         return(
             <div className="video-index-row-div"> 
-                <h1 className="video-index-row">{this.props.genreName.charAt(0).toUpperCase() + this.props.genreName.slice(1)}</h1>
-                    <button className="previous" onClick={() => this.handleClick(-600)}>{"<"}</button>
+                <h1 className="video-index-row">{`${this.props.genreName.charAt(0).toUpperCase() + this.props.genreName.slice(1)}`}</h1>
+                <button className="previous" onClick={() => this.handleClick(-600)}>&#10095;</button>
                 <div className={`video-index-row`} id={`${this.props.genreName}-index-row`}>
                     {videos}  
                 </div>
-                    <button className="next" onClick={() => this.handleClick(600)}>{">"}</button>
+                <button className="next" onClick={() => this.handleClick(600)}>&#10095;</button>
             </div >
         )
     }

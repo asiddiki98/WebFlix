@@ -153,9 +153,10 @@ div.video-index{
         min-height: 53%;
         border-radius: 10px;
         margin-top: 20px;
+        transform: rotate(180deg);
          font-size: 40px;
         &:hover{
-            background: rgba(128, 128, 128, 0.119);
+            background: rgba(128, 128, 128, 0.112);
             color: white;
            
         }
@@ -174,7 +175,7 @@ div.video-index{
         border-radius: 10px;
         font-size: 40px;
         &:hover{
-            background: rgba(128, 128, 128, 0.119);
+            background: rgba(128, 128, 128, 0.112);
             color: white;
            
         }
@@ -234,7 +235,7 @@ video.video-index-item{
     margin-top: 20px;
     margin-right: 10px;
     margin-bottom: 20px;
-
+    cursor: pointer;
 
 }
 
