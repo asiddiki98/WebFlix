@@ -80,8 +80,6 @@ class Browse extends React.Component{
                     src={main.videoUrl} 
                     poster={main.photoUrl} 
                     controls={false} 
-                    // onMouseOver={this.handleMouseIn()}
-                    // onMouseOut={this.handleMouseOut()}
                     autoPlay
                     muted
                     loop
