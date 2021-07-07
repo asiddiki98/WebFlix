@@ -12,43 +12,43 @@
  * Frontend/ Backend User Auth
 
 <div align="center">
-  <img src="https://im6.ezgif.com/tmp/ezgif-6-16d4dd7bb1a6.gif" alt="userauth" width="600" style="vertical-align:middle">
+  <img src="https://github.com/asiddiki98/WebFlix/blob/main/app/assets/images/userauth.gif" alt="userauth" width="600" style="vertical-align:middle">
 </div>
 
  * Video Index has selection of movies split into genres
                           
 <div align="center">
-  <img src="https://im6.ezgif.com/tmp/ezgif-6-bc148f5ad851.gif" alt="video index" width="600" style="vertical-align:middle">
+  <img src="https://github.com/asiddiki98/WebFlix/blob/main/app/assets/images/browse.gif" alt="video index" width="600" style="vertical-align:middle">
 </div>
 
  * User has ability to preview on hover 
   
 <div align="center">
-  <img src="https://im6.ezgif.com/tmp/ezgif-6-597fe29bffe6.gif" alt="video index" width="600" style="vertical-align:middle"/>
+  <img src="https://github.com/asiddiki98/WebFlix/blob/main/app/assets/images/hover.gif" alt="hover" width="600" style="vertical-align:middle"/>
 </div>
  
  * User can create/read/update/destroy items in their watchlist.
  
 <div align="center">
-  <img src="https://im6.ezgif.com/tmp/ezgif-6-bcd2518d5afd.gif" alt="list" width="600" style="vertical-align:middle"/>
+  <img src="https://github.com/asiddiki98/WebFlix/blob/main/app/assets/images/list.gif" alt="list" width="600" style="vertical-align:middle"/>
 </div>
  
  * User can dynamically search webflix for their favorite movies.
 
 <div align="center">
-  <img src="https://im6.ezgif.com/tmp/ezgif-6-b95f509332eb.gif" alt="list" width="600" style="vertical-align:middle"/>
+  <img src="https://github.com/asiddiki98/WebFlix/blob/main/app/assets/images/search.gif" alt="search" width="600" style="vertical-align:middle"/>
 </div>
 
  * User can view movie details.
  
  <div align="center">
-  <img src="https://im6.ezgif.com/tmp/ezgif-6-171b51d29c2b.gif" alt="list" width="600" style="vertical-align:middle"/>
+  <img src="https://github.com/asiddiki98/WebFlix/blob/main/app/assets/images/modal.gif" alt="modal" width="600" style="vertical-align:middle"/>
 </div>
  
  * Video show page.
 
 <div align="center">
-  <img src="https://im6.ezgif.com/tmp/ezgif-6-0334847eea6f.gif" alt="list" width="600" style="vertical-align:middle"/>
+  <img src="https://github.com/asiddiki98/WebFlix/blob/main/app/assets/images/show.gif" alt="show" width="600" style="vertical-align:middle"/>
 </div>
 
   ## Technologies and Challenges
