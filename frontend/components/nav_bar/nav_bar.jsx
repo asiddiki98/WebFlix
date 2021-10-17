@@ -5,10 +5,7 @@ import { Link } from 'react-router-dom';
 class NavBar extends React.Component {
     constructor(props){
         super(props)
-
         this.loginDemo = this.loginDemo.bind(this)
-
-        
     }
 
 
@@ -21,7 +18,6 @@ class NavBar extends React.Component {
         this.props.login(demo)
     }
     render(){
-      
         let display, klass;
         if (this.props.location.pathname === "/") {
             klass = "register-nav-bar"
@@ -40,7 +36,6 @@ class NavBar extends React.Component {
                   
                     <div className="profile-dropdown" ref={div => this.dropDown = div}>
                         <img className="profile" src={window.profileUrl} /> <div className="caret">&#9660;</div>
-                        {/* {!this.state.hidden && <div className="dropdown-contents" onClick={e => e.stopPropagation()}> */}
                             <div className="dropdown-content">
                             <a href="https://github.com/asiddiki98" target="_blank"><button className="signout-button"> <i className="fab fa-github"> </i> Github</button></a>
                             <a href="https://angel.co/u/azim-siddiki" target="_blank"><button className="github-button">  <i className="fab fa-angellist"></i> Angel List</button></a>
