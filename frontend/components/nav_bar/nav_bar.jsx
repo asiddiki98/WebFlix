@@ -43,7 +43,7 @@ class NavBar extends React.Component {
                                 <button  className="github-button" onClick={this.props.logout}>Sign out </button>
 
                             </div>
-                        {/* </div>} */}
+
                     </div>
                 </div>
                 
